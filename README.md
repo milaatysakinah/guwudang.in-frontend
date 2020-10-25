@@ -1,117 +1,68 @@
-# Kuy Belajar React JS!
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-[**React JS**](https://reactjs.org/) adalah sebuah framework JavaScript yang dibuat untuk membangun aplikasi front-end berbasis web. Dalam tutorial kalian bisa mempelajari semua hal dasar yang perlu diketahui untuk membangun aplikasi front-end web menggunakan **React JS**.
+## Available Scripts
 
-## References
+In the project directory, you can run:
 
-Sebelum masuk ke komponen dan koding, ada beberapa link referensi yang berisi informasi perihal apa itu **React JS** dan mengapa belajar **React JS ** dapat bermanfaat untuk kalian:
+### `yarn start`
 
-- [What Is React (React js) & Why Is It So Popular?](https://www.youtube.com/watch?v=N3AkSS5hXMA)
-- [Tutorial Resmi React JS](https://reactjs.org)
+Runs the app in the development mode.<br />
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-## Roadmap
+The page will reload if you make edits.<br />
+You will also see any lint errors in the console.
 
-![React JS roadmap](https://roadmap.sh/roadmaps/react.png)
-Eits, jangan keburu pusing dulu setelah melihat gambar ini, meskipun terlihat banyak sekali yang perlu dipelajari untuk bisa membangun aplikasi web menggunakan **React JS**, tapi sebenarnya hal itu justru mempermudah developer dalam mengembangkan aplikasi, karena banyak sekali library atau komponen yang dapat digunakan untuk membangun aplikasi web dengan praktis.
+### `yarn test`
 
-## Fundamental Topics
+Launches the test runner in the interactive watch mode.<br />
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-Sebelum masuk ke **React JS**, kita harus lebih dulu memahami bahasa pemrograman JS atau **JavaScript**. Bahasa pemrograman **JavaScript** dapat dipelajari dengan cepat karena bersifat sederhana dan fleksibel. Kalian dapat mempelajari dasar dasar pemrograman JavaScript disini:
-[# A re-introduction to JavaScript (JS tutorial)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript)
+### `yarn build`
 
-Apabila sudah memahami JavaScript, sekarang waktunya kita masuk ke **Fundamental React JS**
+Builds the app for production to the `build` folder.<br />
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-### 1. Instalasi dan Create App
+The build is minified and the filenames include the hashes.<br />
+Your app is ready to be deployed!
 
-- Install npm and Node JS: https://www.npmjs.com/get-npm
-- Run `npx create-react-app` atau clone starter dari sini:
-  - [**react-basic**](https://github.com/pradiptakp/react-101/tree/master/react-basic): Setup React sederhana yang mencakup routing, autentikasi dasar dan fetching data.
-- Apabila melakukan clone, run `npm install` untuk melakukan install _node modules_ atau kumpulan dari library yang terdaftar di package.json
-- Untuk run debug bisa gunakan `npm start`
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-> Referensi: [Learn React In 30 Minutes](https://www.youtube.com/watch?v=hQAHSlTtcmY)
+### `yarn eject`
 
-### 2. JSX
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-**JSX** adalah bahasa yang digunakan untuk menulis view komponen dari **React JS**, syntax **JSX** sendiri tidak jauh berbeda dengan HTML. Contoh dari penulisan **JSX** dapat dilihat di App.js.
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-> Referensi:
->
-> - https://www.w3schools.com/react/react_jsx.asp
-> - https://reactjs.org/docs/introducing-jsx.html
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-### 3. Functional vs Class Components
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-Pengunaan function dan class dalam penulisan koding memiliki perbedaan syntax dan fungsional yang mempengaruhi pengolahan data dalam React
+## Learn More
 
-> Referensi:
-> https://medium.com/@Zwenza/functional-vs-class-components-in-react-231e3fbd7108
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-### 4. Props vs State
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-Props & State adalah komponen yang dapat digunakan untuk menyimpan dan mengolah data dalam **React JS**
+### Code Splitting
 
-> Referensi:
-> https://flaviocopes.com/react-state-vs-props/
+This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
 
-### 5. Conditional Rendering
+### Analyzing the Bundle Size
 
-Dengan menggunakan data dari props atau state, developer dapat melakukan conditional rendering yaitu dengan melakukan rendering komponen **JSX** menyesuaikan dengan kondisi dari data baik menggunakan state atau props
+This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
 
-> Referensi:
-> https://linguinecode.com/post/4-techniques-conditional-render-react-props-state
+### Making a Progressive Web App
 
-### 6. Component Life Cycle
+This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
 
-**Component Life Cycle** adalah siklus dari komponen yang digunakan untuk me-render tampilan dari web. Siklus ini memang terlihat agak rumit, beruntung nya sekarang sudah ada hooks yang salah satu kegunaannya adalah untuk menyederhanakan life cycle dari **React JS**.
+### Advanced Configuration
 
-> https://medium.com/codeacademia/apa-itu-component-lifecycle-di-react-bfcb64f64e0e
+This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
 
-### 7. List & Keys
+### Deployment
 
-Dengan List & Keys developer dapat menampilkan tampilan berulang secara mudah menggunakan fungsi `.map`
+This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
 
-> Referensi:
-> https://reactjs.org/docs/lists-and-keys.html
+### `yarn build` fails to minify
 
-### 8. Composition vs Inheritance
-
-Ini adalah salah satu komponen yang membuat **React JS** populer. Komposisi memungkinkan developer untuk membungkus komponen dalam komponen yang membuat tampilan web mudah untuk dirancang dan membuat kode menjadi lebih rapi.
-
-> Referensi:
-> https://reactjs.org/docs/composition-vs-inheritance.html
-
-### 9. Basic Hooks
-
-React Hooks mempermudah developer dalam melakukan manajemen _Life Cycle_ dari komponen react dan juga mengolah data. Sebelum hooks syntax syntax bawaan dari React seperti `this.setState` dan `this.state` serta fungsi _Life Cycle_ dari React seperti `componentWillMount` dan `componentDidMount` masih sering digunakan. Namun dengan adanya Hooks, semua itu dapat di handle oleh beberapa fungsi dasar seperti `useState` dan `useEffect`. 
-
-Fungsi `useEffect` dipanggil saat layar pertama kali di mount, fungsi ini juga dapat melakukan listen pada perubahan suatu state atau data pada layar. Fungsi `useState` dapat digunakan untuk mengolah data pada screen dengan mudah, anggap variabel yang menggunakan `useState` sebagai variabel yang hanya dimiliki layar tersebut dan developer dapat menggunakan data dalam state untuk melakukan berbagai hal seperti conditional rendering, looping view, dll.
-
-> Referensi:
->
-> - https://reactjs.org/docs/hooks-intro.html
-> - https://www.valentinog.com/blog/hooks/
-
-## Useful Libraries
-Berikut adalah beberapa library yang sangat berguna dan sering digunakan oleh developer untuk mengembangkan aplikasi *React JS*
-
-### 1. React Router
-Digunakan untuk routing pada applikasi
-> https://reactrouter.com/web/guides/quick-start
-
-### 2. Axios
-Digunakan untuk fetch API calls
-> https://www.digitalocean.com/community/tutorials/react-axios-react
-
-### 3. Formik
-Digunakan untuk mempermudah membuat form
-> https://formik.org/docs/overview
-
-### 4. React Bootstrap
-Styling React menggunakan komponen komponen dari bootstrap
-> https://react-bootstrap.github.io/getting-started/introduction/
-
-## Link link berguna:
-https://github.com/adam-golab/react-developer-roadmap
-
-https://github.com/enaqx/awesome-react
+This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
