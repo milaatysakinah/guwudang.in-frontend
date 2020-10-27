@@ -6,8 +6,9 @@
         halaman login padal udah login)
 */
 
-import Login from "pages/Login";
-import Home from "pages/Home";
+import Login from "pages/Login/Login";
+//import Home from "pages/Home";
+import Home from "pages/Test.js";
 import Dashboard from "pages/Dashboard";
 
 export const APP_ROUTE = [
