@@ -8,7 +8,7 @@
 
 import Login from "pages/Login/Login";
 //import Home from "pages/Home";
-import Home from "pages/Test.js";
+import Home from "pages/main";
 import Dashboard from "pages/Dashboard";
 
 export const APP_ROUTE = [
