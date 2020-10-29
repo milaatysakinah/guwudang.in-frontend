@@ -30,3 +30,9 @@
     width: 100vh;
     background: #DDE5F1;
 }
+
+.textContent{
+  display: inline-block;
+  padding-left: 20px !important;  
+  color: white;
+}
