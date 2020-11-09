@@ -5,7 +5,7 @@
 */
 
 import React from "react";
-import { Button, Container, Navbar, Form, Alert } from "react-bootstrap";
+import { Button, Container, Form, Alert } from "react-bootstrap";
 import { Link, useHistory } from "react-router-dom";
 import { login } from "utils/auth";
 

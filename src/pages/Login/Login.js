@@ -5,10 +5,11 @@
 */
 
 import React from "react";
-import { Button, Container, Navbar, Form, Alert } from "react-bootstrap";
+import { Button, Container, Navbar, Form, Alert, FormControl, InputGroup } from "react-bootstrap";
 import { Link, useHistory } from "react-router-dom";
 import { login } from "utils/auth";
 import LoginBox from "./Login.module.css";
+import { FaUser, FaRegListAlt } from "react-icons/fa";
 
 const Home = () => {
   const [email, setEmail] = React.useState("");
@@ -51,7 +52,7 @@ const Home = () => {
             <Form.Group controlId="formBasicEmail">
               <Form.Control
                 type="email"
-                placeholder="Enter email"
+                placeholder=  "&#xF007; Enter email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />

@@ -41,7 +41,7 @@ class Sidebar extends Component {
               </div>
             </a>
 
-            <a href="#" className="simple-text logo-mini">
+            <a href="/dashboard" className="simple-text logo-mini">
               <div className={classes.titleContent}>
                 <MdDashboard style={{ color: "white", fontSize: "35px" }} />
                 <p className={classes.titleText}>
@@ -54,7 +54,7 @@ class Sidebar extends Component {
               Product
             </p>
 
-            <a href="#" className="simple-text logo-mini">
+            <a href="/home" className="simple-text logo-mini">
               <div className={classes.titleContent}>
                 <BsFillInboxesFill className={classes.logoSet}/>
                 <p className={classes.titleText}>
@@ -76,14 +76,14 @@ class Sidebar extends Component {
               </div>
             </a>
 
-            <Link to="/accountPage">
+            <a href="/accountPage" className="simple-text logo-mini">
             <div className={classes.titleContent}>
                 <FaUser className={classes.logoSet}/>
                 <p className={classes.titleText}>
                   Account
                 </p>
               </div>
-            </Link>
+            </a>
               
           </div>
         </div>
