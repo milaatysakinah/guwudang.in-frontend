@@ -13,7 +13,7 @@ export const history = createBrowserHistory();
 
 const App = () => {
   return (
-    <Router>
+    <Router >
       <Switch>
         {APP_ROUTE.map((value, index) => {
           if (value.private) {
