@@ -7,9 +7,9 @@
 */
 
 import Login from "pages/Login/Login";
-//import Home from "pages/Home";
-import Home from "pages/main";
-import Dashboard from "pages/Dashboard";
+import Home from "pages/Home";
+import Main from "pages/main";
+import Dashboard from "pages/Dashboard/Dashboard";
 import AccountPage from "pages/AccountPage/AccountPage";
 
 export const APP_ROUTE = [
@@ -18,20 +18,22 @@ export const APP_ROUTE = [
     path: "/login",
     exact: true,
     component: Login,
-    restricted: true,
+    restricted: false,
   },
   {
     name: "Home",
-    path: "/",
+    path: "/home",
     exact: true,
     component: Home,
-    restricted: false,
+    restricted: true,
+    private: true,
   },
   {
     name: "Dashboard",
     path: "/dashboard",
     exact: true,
     component: Dashboard,
+    restricted: true,
     private: true,
   },
   {
@@ -40,5 +42,6 @@ export const APP_ROUTE = [
     exact: true,
     component: AccountPage,
     restricted: true,
-  }
+    private: true,
+  },
 ];

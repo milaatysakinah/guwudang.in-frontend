@@ -5,22 +5,23 @@ import { withRouter } from "react-router";
 import Sidebar from "./Sidebar/Sidebar";
 import Home from "./Home.js";
 import sidebar from "./Sidebar/Sidebar.module.css";
-import myNavbar from "./Navbar";
+import MyNavbar from "./Navbar.js";
+import MyDasboard from "./Dashboard/Dashboard.js";
 
-const Dash = (props) => {
+const main = (props) => {
   return (
     <Container fluid>
       <Row>
         <Col md={2}>
           <Sidebar />
         </Col>
-        <Col md={10} className={sidebar.pageContentWrapper}>
-          <myNavbar />
-          <Home />
+        <Col md={10} className={sidebar.pageContentWrapper} style={{paddingTop:"40px"}}>
+          <MyNavbar />
+          {props.children}
         </Col>
       </Row>
     </Container>
   );
 };
-const Dashboard = withRouter(Dash);
-export default Dashboard;
+
+export default main;

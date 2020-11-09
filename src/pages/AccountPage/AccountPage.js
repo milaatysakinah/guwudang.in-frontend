@@ -1,7 +1,4 @@
 import React from "react";
-import Sidebar from "./../Sidebar/Sidebar";
-import Navbar from "./../Navbar";
-import sidebar from "./../Sidebar/Sidebar.module.css";
 import { Col, Container, Nav, Row, Image, Card } from "react-bootstrap";
 import classes from "./AccountPage.module.css";
 
@@ -10,14 +7,8 @@ const AccountPage = () => {
     <div style={{ backgroundColor: "#dde5f1" }}>
       <Container fluid>
         <Row style={{ backgroundColor: "#dde5f1" }}>
-          <Col md={2}>
-            <Sidebar />
-          </Col>
           <Col md={10}>
             <Container fluid>
-              <Row>
-                <Navbar />
-              </Row>
               <Row>
                 <Container style={{ height: "100vh" }}>
                   <Row>
