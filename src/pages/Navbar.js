@@ -23,26 +23,21 @@ import { GET_FILMS } from "constants/urls";
 import { FaSearch } from "react-icons/fa";
 
 const NavbarTest = () => {
-    return (
-
-<Navbar expand="lg">
-        <Container>
-          <Link to="/">
-            <Navbar.Brand color="white">
-              <strong>Welcome Mirose </strong><br/>
-              <small> Wed, 7 Oct 2020 </small>
-            </Navbar.Brand>
-          </Link>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="ml-auto">
-              <Image src="holder.js/240x240" roundedCircle />
-            </Nav>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
-
-);
+  return (
+    <Navbar expand="lg">
+        <Navbar.Brand color="white" style={{paddingTop: "20px"}, {paddingLeft: "20px"}}>
+          <strong>Welcome Mirose </strong>
+          <br />
+          <small> Wed, 7 Oct 2020 </small>
+        </Navbar.Brand>
+      <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
+        <Nav className="ml-auto">
+          <Image src="holder.js/240x240" roundedCircle />z
+        </Nav>
+      </Navbar.Collapse>
+    </Navbar>
+  );
 };
 
 export default NavbarTest;

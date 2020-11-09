@@ -10,6 +10,7 @@ import Login from "pages/Login/Login";
 //import Home from "pages/Home";
 import Home from "pages/main";
 import Dashboard from "pages/Dashboard";
+import AccountPage from "pages/AccountPage/AccountPage";
 
 export const APP_ROUTE = [
   {
@@ -33,4 +34,11 @@ export const APP_ROUTE = [
     component: Dashboard,
     private: true,
   },
+  {
+    name: "AccountPage",
+    path: "/accountPage",
+    exact: true,
+    component: AccountPage,
+    restricted: true,
+  }
 ];

@@ -28,7 +28,8 @@
 }
 
 .pageContentWrapper {
-  width: 200vh;
+  width: 100vw;
+  height: 100vh;
   background: #dde5f1;
 }
 
