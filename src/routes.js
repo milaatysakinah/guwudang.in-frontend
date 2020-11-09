@@ -44,4 +44,13 @@ export const APP_ROUTE = [
     restricted: true,
     private: true,
   },
+
+  {
+    name: "Product",
+    path: "/product",
+    exact: true,
+    component: Product,
+    restricted: true,
+    private: true,
+  },  
 ];
