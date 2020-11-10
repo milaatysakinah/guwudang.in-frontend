@@ -64,13 +64,13 @@ const Product = () => {
         <div>
             <Container fluid>
                 <Row>
-                    <Col xs={2} className={sidebar.sidebarWrapper}>
+                    {/* <Col xs={2} className={sidebar.sidebarWrapper}>
                         <Sidebar />
-                    </Col>
-                    <Col xs={10} className={sidebar.pageContentWrapper} style={{ padding: "0" }}>
+                    </Col> */}
+                    {/* <Col xs={10} className={sidebar.pageContentWrapper} style={{ padding: "0" }}> */}
 
-                        <NavbarTest />
-
+                        {/* <NavbarTest /> */}
+                        <br/><br/><br/>
                         <Container>
                             <Row>
                                 <Col sm={8}><h3>Inventory List</h3></Col>
@@ -137,7 +137,7 @@ const Product = () => {
 
                         </Container>
 
-                    </Col>
+                    {/* </Col> */}
                 </Row>
 
             </Container>
