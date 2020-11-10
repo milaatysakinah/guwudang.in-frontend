@@ -67,7 +67,7 @@ class Sidebar extends Component {
               Business
             </p>
 
-            <a href="#" className="simple-text logo-mini">
+            <a href="/partner" className="simple-text logo-mini">
               <div className={classes.titleContent}>
                 <FaUser className={classes.logoSet}/>
                 <p className={classes.titleText}>
