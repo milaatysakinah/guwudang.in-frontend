@@ -15,7 +15,7 @@ import {
     // Form,
     FormControl,
     InputGroup,
-    Image,
+    // Image,
     Container,
     // Nav,
     // Navbar,
@@ -33,10 +33,10 @@ import { Link, useHistory } from "react-router-dom";
 import axios from "axios";
 import { GET_FILMS } from "constants/urls";
 import { FaSearch, FaInfoCircle } from "react-icons/fa";
-import NavbarTest from "./Navbar.js";
-import Sidebar from "./Sidebar/Sidebar";
-import sidebar from "./Sidebar/Sidebar.module.css";
-import Home from "./Home.js";
+// import NavbarTest from "./Navbar.js";
+// import Sidebar from "./Sidebar/Sidebar";
+// import sidebar from "./Sidebar/Sidebar.module.css";
+// import Home from "./Home.js";
 // import { IconName } from "react-icons/bi";
 
 const Product = () => {
@@ -60,6 +60,32 @@ const Product = () => {
         return () => { };;
     }, []);
 
+    var no = 1;
+
+    const fakeData = [
+        {
+            product_type_id : 1,
+            user_id : 1,
+            product_name : 'Baju Badut',
+            price : 200000,
+            units : 20,
+        },
+        {
+            product_type_id : 2,
+            user_id : 1,
+            product_name : 'Baju Santai',
+            price : 100000,
+            units : 30,
+        },
+        {
+            product_type_id : 3,
+            user_id : 1,
+            product_name : 'Baju Pantai',
+            price : 150000,
+            units : 25,
+        },
+      ]
+
     return (
         <div>
             <Container fluid>
@@ -70,8 +96,8 @@ const Product = () => {
                     {/* <Col xs={10} className={sidebar.pageContentWrapper} style={{ padding: "0" }}> */}
 
                         {/* <NavbarTest /> */}
-                        <br/><br/><br/>
                         <Container>
+                            <br /> <br /> <br />
                             <Row>
                                 <Col sm={8}><h3>Inventory List</h3></Col>
                                 <Col sm={4}>
@@ -89,46 +115,31 @@ const Product = () => {
                                 </Col>
                                 <Col sm={12}><hr /></Col>
                                 <Col sm={12}>
-                                    <Table responsive="xl" className="table table-borderless">
-                                        <thead>
+                                    <Table responsive="xl" borderless>
+                                        <thead className="text-center">
                                             <tr>
                                                 <th>#</th>
-                                                <th>Gambar</th>
+                                                {/* <th>Gambar</th> */}
                                                 <th>Nama Produk</th>
-                                                <th>Expire Date</th>
+                                                {/* <th>Expire Date</th> */}
                                                 <th>Price</th>
                                                 <th>Stock</th>
                                                 <th></th>
                                             </tr>
                                         </thead>
-                                        <tbody>
+                                        <tbody className="text-center">
+                                            
+                                            {fakeData.map((data) => (
                                             <tr>
-                                                <td>1</td>
-                                                <td><Image src="holder.js/300x300" roundedCircle /></td>
-                                                <td>MH671029 - Moina</td>
-                                                <td>21 December 2020</td>
-                                                <td>50.000,00</td>
-                                                <td>89</td>
+                                                <td>{no++}</td>
+                                                {/* <td><Image src="holder.js/300x300" roundedCircle /></td> */}
+                                                <td>{data.product_name}</td>
+                                                {/* <td>21 December 2020</td> */}
+                                                <td>{data.price}</td>
+                                                <td>{data.units}</td>
                                                 <td><Button>Detail <FaInfoCircle /></Button></td>
                                             </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td><Image src="holder.js/300x300" roundedCircle /></td>
-                                                <td>MH671029 - Moina</td>
-                                                <td>21 December 2020</td>
-                                                <td>50.000,00</td>
-                                                <td>89</td>
-                                                <td><Button>Detail <FaInfoCircle /></Button></td>
-                                            </tr>
-                                            <tr>
-                                                <td>3</td>
-                                                <td><Image src="holder.js/300x300" roundedCircle /></td>
-                                                <td>MH671029 - Moina</td>
-                                                <td>21 December 2020</td>
-                                                <td>50.000,00</td>
-                                                <td>89</td>
-                                                <td><Button>Detail <FaInfoCircle /></Button></td>
-                                            </tr>
+                                            ))}
                                         </tbody>
                                     </Table>
                                 </Col>
