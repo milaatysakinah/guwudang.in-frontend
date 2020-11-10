@@ -11,6 +11,7 @@ import Home from "pages/Home";
 import Main from "pages/main";
 import Dashboard from "pages/Dashboard/Dashboard";
 import AccountPage from "pages/AccountPage/AccountPage";
+import Product from "pages/Product";
 
 export const APP_ROUTE = [
   {

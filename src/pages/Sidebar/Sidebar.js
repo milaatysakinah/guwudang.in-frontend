@@ -54,7 +54,7 @@ class Sidebar extends Component {
               Product
             </p>
 
-            <a href="/home" className="simple-text logo-mini">
+            <a href="/product" className="simple-text logo-mini">
               <div className={classes.titleContent}>
                 <BsFillInboxesFill className={classes.logoSet}/>
                 <p className={classes.titleText}>
