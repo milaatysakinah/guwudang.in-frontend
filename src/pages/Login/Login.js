@@ -5,11 +5,10 @@
 */
 
 import React from "react";
-import { Button, Container, Navbar, Form, Alert, FormControl, InputGroup } from "react-bootstrap";
-import { Link, useHistory } from "react-router-dom";
+import { Button, Container, Form, Alert } from "react-bootstrap";
+import { useHistory } from "react-router-dom";
 import { login } from "utils/auth";
 import LoginBox from "./Login.module.css";
-import { FaUser, FaRegListAlt } from "react-icons/fa";
 import Axios from "axios";
 import { LOGIN } from "constants/urls";
 

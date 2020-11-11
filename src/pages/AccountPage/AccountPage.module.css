@@ -11,11 +11,23 @@
 .profilePicture {
     width: 260px;
     height: 260px;
-    align-items: center;
+    margin-left: 380px;
 }
 
-.card {
-    width: 20vw;
+.cardTitle {
+    margin-left: 30px;
     margin-top: 60px;
+}
+
+.cardBody {
+    padding-top: 5px;
+    margin-left: 30px;
+    width: 20vw;
     text-align: center;
+}
+
+.logoutBtn {
+    margin-top: 120px;
+    width: 10vw;
+    margin-left: 420px;
 }

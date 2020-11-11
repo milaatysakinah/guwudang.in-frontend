@@ -20,7 +20,7 @@ import { Link, useHistory } from "react-router-dom";
 import { logout } from "utils/auth";
 import axios from "axios";
 import { GET_FILMS } from "constants/urls";
-import { FaSearch } from "react-icons/fa";
+import { FaUserCircle } from "react-icons/fa";
 
 const NavbarTest = () => {
   return (
@@ -32,9 +32,9 @@ const NavbarTest = () => {
         </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
-        <Nav className="ml-auto">
-          <Image src="holder.js/240x240" roundedCircle />z
-        </Nav>
+        <Navbar.Brand href="#">
+          <FaUserCircle style={{width:"50px", height:"50px", marginRight: "20px"}}></FaUserCircle>
+        </Navbar.Brand>
       </Navbar.Collapse>
     </Navbar>
   );

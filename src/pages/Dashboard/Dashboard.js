@@ -10,23 +10,18 @@
 
 import React from "react";
 import {
-  Button,
   Container,
-  Nav,
-  Navbar,
   Jumbotron,
   Row,
   Col,
-  Spinner,
-  Alert,
   Table,
 } from "react-bootstrap";
-import { Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { logout } from "utils/auth";
 import axios from "axios";
 import { GET_FILMS } from "constants/urls";
-import MyNavbar from "../Navbar.js";
 import { FaUser } from "react-icons/fa";
+import classes from "./Dashboard.module.css";
 
 const Dashboard = () => {
   const history = useHistory();
@@ -77,7 +72,7 @@ const Dashboard = () => {
       <Container>
         <Row>
           <Col> 
-            <Jumbotron style={{backgroundColor:"white", marginTop:"50px", width:"750px", height:"200px", paddingTop:"40px"}}>
+            <Jumbotron className={classes.jumbotron} style={{backgroundColor:"white"}}>
                 <Row>
                   <Col>
                     <Row style={{paddingLeft:"110px"}}>
@@ -92,10 +87,10 @@ const Dashboard = () => {
                   </Col>
 
                   <Col>
-                    <Row style={{paddingLeft:"100px"}}>
+                    <Row style={{paddingLeft:"110px"}}>
                       <FaUser style={{width:"50px", height:"50px"}}/>
                     </Row>
-                    <Row style={{paddingLeft:"100px"}}>
+                    <Row style={{paddingLeft:"110px"}}>
                       <p style={{paddingLeft:"5px", paddingTop : "10px", fontWeight:"bold", fontSize:"20px"}}>196</p>
                     </Row>
                     <Row style={{paddingLeft:"75px"}}>
@@ -104,10 +99,10 @@ const Dashboard = () => {
                   </Col>
 
                   <Col>
-                    <Row style={{paddingLeft:"90px"}}>
+                    <Row style={{paddingLeft:"110px"}}>
                       <FaUser style={{width:"50px", height:"50px"}}/>
                     </Row>
-                    <Row style={{paddingLeft:"90px"}}>
+                    <Row style={{paddingLeft:"110px"}}>
                       <p style={{paddingLeft:"5px", paddingTop : "10px", fontWeight:"bold", fontSize:"20px"}}>196</p>
                     </Row>
                     <Row style={{paddingLeft:"65px"}}>
