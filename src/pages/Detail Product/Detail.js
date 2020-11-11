@@ -12,7 +12,7 @@ export default function Detail() {
             <Container>
             <Row>
                 <Col>
-                <img src={Gambar)/>
+                <img src={Gambar}/>
                 </Col>
                 <Col>
                 {/* judul barang */}

@@ -10,6 +10,8 @@ import { Link, useHistory } from "react-router-dom";
 import { login } from "utils/auth";
 import LoginBox from "./Login.module.css";
 import { FaUser, FaRegListAlt } from "react-icons/fa";
+import Axios from "axios";
+import { LOGIN } from "constants/urls";
 
 const Home = () => {
   const [email, setEmail] = React.useState("");
@@ -25,7 +27,11 @@ const Home = () => {
   }, [email, password]);
 
   const _onSubmit = () => {
-    if (email === "angga.ganteng@email.com" && password === "123") {
+    if (Axios.post(LOGIN, {
+      email : email,
+      password : password
+    })) 
+    {
       login({
         email: email,
       });

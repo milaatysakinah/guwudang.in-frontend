@@ -13,6 +13,7 @@ import Dashboard from "pages/Dashboard/Dashboard";
 import AccountPage from "pages/AccountPage/AccountPage";
 import Product from "pages/Product";
 import Partner from "pages/Partner";
+import DetailProduct from "pages/Detail Product/Detail";
 
 export const APP_ROUTE = [
   {
@@ -21,6 +22,13 @@ export const APP_ROUTE = [
     exact: true,
     component: Login,
     restricted: false,
+  },
+  {
+    name: "Main",
+    path: "/",
+    exact: true,
+    component: Main,
+    restricted: true,
   },
   {
     name: "Home",
@@ -55,7 +63,6 @@ export const APP_ROUTE = [
     restricted: true,
     private: true,
   },  
-
   {
     name: "Partner",
     path: "/partner",
@@ -64,4 +71,12 @@ export const APP_ROUTE = [
     restricted: true,
     private: true,
   }, 
+  {
+    name: "DetailProduct",
+    path: "/detailProduct",
+    exact: true,
+    component: DetailProduct,
+    restricted: true,
+    private: true,
+  },
 ];
