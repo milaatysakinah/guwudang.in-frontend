@@ -15,7 +15,7 @@ export default function Detail() {
                 <img src={Gambar}/>
                 </Col>
                 <Col>
-                {/*  */}
+                {/*Belajar bebs  */}
                     <Row>
                         
                     </Row>
