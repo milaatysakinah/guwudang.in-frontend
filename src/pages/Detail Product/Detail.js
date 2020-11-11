@@ -15,11 +15,15 @@ export default function Detail() {
                 <img src={Gambar}/>
                 </Col>
                 <Col>
-                {/* judul barang */}
+                /* judul barang */
                     <Row>
                         
                     </Row>
-                {/* kode barang */}
+                /* kode barang */
+                    <Row>
+
+                    </Row>
+                /*  */
                     <Row>
 
                     </Row>
