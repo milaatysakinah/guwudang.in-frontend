@@ -1,8 +1,37 @@
 import React from "react";
-import { Col, Container, Nav, Row, Image, Card } from "react-bootstrap";
+import { Col, Container, Nav, Row, Image, Card, Button } from "react-bootstrap";
 import classes from "./AccountPage.module.css";
+import { Link, useHistory } from "react-router-dom";
+import { logout } from "utils/auth";
+import axios from "axios";
+import { GET_FILMS } from "constants/urls";
 
 const AccountPage = () => {
+  const history = useHistory();
+  const [loading, setLoading] = React.useState(true);
+  const [error, setError] = React.useState(false);
+  const [film, setFilm] = React.useState();
+
+  React.useEffect(() => {
+    axios
+      .get(GET_FILMS)
+      .then((res) => {
+        setLoading(false);
+        setFilm(res.data);
+      })
+      .catch((err) => {
+        setLoading(false);
+        setError(true);
+        console.warn(err);
+      });
+    return () => {};
+  }, []);
+
+  const _onLogout = () => {
+    logout();
+    history.replace("/login");
+  };
+
   return (
     <div style={{ backgroundColor: "#dde5f1" }}>
       <Container fluid>
@@ -61,6 +90,9 @@ const AccountPage = () => {
                         </Card.Body>
                       </Card>
                     </Col>
+                    <Button variant="primary" onClick={_onLogout}>
+                Logout
+              </Button>
                   </Row>
                 </Container>
               </Row>
