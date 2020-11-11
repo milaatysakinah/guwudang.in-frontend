@@ -29,6 +29,7 @@ export const APP_ROUTE = [
     exact: true,
     component: Main,
     restricted: true,
+    private: true,
   },
   {
     name: "Home",
