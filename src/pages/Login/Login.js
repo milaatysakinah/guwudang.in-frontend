@@ -9,7 +9,8 @@ import { Button, Container, Form, Alert } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 import { login } from "utils/auth";
 import LoginBox from "./Login.module.css";
-import Axios from "axios";
+import { FaUser, FaRegListAlt } from "react-icons/fa";
+import axios from "axios";
 import { LOGIN } from "constants/urls";
 
 const Home = () => {
@@ -26,18 +27,20 @@ const Home = () => {
   }, [email, password]);
 
   const _onSubmit = () => {
-    if (Axios.post(LOGIN, {
-      email : email,
-      password : password
-    })) 
-    {
+    axios.post(LOGIN, {
+        email : email,
+        password : password
+    })
+    .then((res) => {
       login({
-        email: email,
+        email: res.data.email,
+        token : res.data.token,
       });
       history.push("/dashboard");
-    } else {
+    })
+    .catch((err) => {
       setError(true);
-    }
+    })
   };
 
   return (
