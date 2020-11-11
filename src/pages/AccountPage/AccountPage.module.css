@@ -1,0 +1,21 @@
+.bodyBackground {
+    background-color: lightgray;
+}
+
+.titleText {
+    font-size: 35px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.profilePicture {
+    width: 260px;
+    height: 260px;
+    align-items: center;
+}
+
+.card {
+    width: 20vw;
+    margin-top: 60px;
+    text-align: center;
+}

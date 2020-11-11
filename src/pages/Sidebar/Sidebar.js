@@ -30,7 +30,7 @@ class Sidebar extends Component {
       >
         <div className={classes.sidebarWrapper}>
           <div className={classes.textContent}>
-            <a hre className="simple-text logo-mini">
+            <a href="#" className="simple-text logo-mini">
               <div className={classes.logoImg}>
                 <img
                   style={({ width: "50px" }, { height: "50px" })}
@@ -41,7 +41,7 @@ class Sidebar extends Component {
               </div>
             </a>
 
-            <a href="#" className="simple-text logo-mini">
+            <a href="/dashboard" className="simple-text logo-mini">
               <div className={classes.titleContent}>
                 <MdDashboard style={{ color: "white", fontSize: "35px" }} />
                 <p className={classes.titleText}>
@@ -50,20 +50,11 @@ class Sidebar extends Component {
               </div>
             </a>
 
-            <a href="#" className="simple-text logo-mini">
-              <div className={classes.titleContent}>
-                <RiBarChartLine className={classes.logoSet} />
-                <p className={classes.titleText}>
-                  Report
-                </p>
-              </div>
-            </a>
-
             <p className={classes.contentType}>
               Product
             </p>
 
-            <a href="#" className="simple-text logo-mini">
+            <a href="/product" className="simple-text logo-mini">
               <div className={classes.titleContent}>
                 <BsFillInboxesFill className={classes.logoSet}/>
                 <p className={classes.titleText}>
@@ -72,20 +63,11 @@ class Sidebar extends Component {
               </div>
             </a>
 
-            <a href="#" className="simple-text logo-mini">
-              <div className={classes.titleContent}>
-                <FaRegListAlt className={classes.logoSet}/>
-                <p className={classes.titleText}>
-                  Invoice
-                </p>
-              </div>
-            </a>
-
             <p className={classes.contentType}>
               Business
             </p>
 
-            <a href="#" className="simple-text logo-mini">
+            <a href="/partner" className="simple-text logo-mini">
               <div className={classes.titleContent}>
                 <FaUser className={classes.logoSet}/>
                 <p className={classes.titleText}>
@@ -94,14 +76,15 @@ class Sidebar extends Component {
               </div>
             </a>
 
-            <a href="#" className="simple-text logo-mini">
-              <div className={classes.titleContent}>
+            <a href="/accountPage" className="simple-text logo-mini">
+            <div className={classes.titleContent}>
                 <FaUser className={classes.logoSet}/>
                 <p className={classes.titleText}>
                   Account
                 </p>
               </div>
             </a>
+              
           </div>
         </div>
       </div>

@@ -28,14 +28,15 @@
 }
 
 .pageContentWrapper {
-  width: 200vh;
+  width: 100vw;
+  height: 100vh;
   background: #dde5f1;
 }
 
 .textContent {
-  margin-left: 20px;
+  margin-left: 15px;
   display: inline-block;
-  padding-left: 20px !important;
+  padding-left: 10px !important;
   color: white;
   -webkit-text-fill-color: white;
   padding-top: 20px;

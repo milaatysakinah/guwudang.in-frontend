@@ -10,7 +10,6 @@ import MyNavbar from "./Navbar.js";
 const Home = () => {
   return (
     <div>
-      <MyNavbar/>
       <Jumbotron>
         <Container>
           <h1>Hello, world!</h1>
