@@ -137,7 +137,7 @@ const Product = () => {
                                                 {/* <td>21 December 2020</td> */}
                                                 <td>{data.price}</td>
                                                 <td>{data.units}</td>
-                                                <td><Button href="/">Detail <FaInfoCircle /></Button></td>
+                                                <td><Link to="/detailProduct"><Button>Detail <FaInfoCircle /></Button></Link></td>
                                             </tr>
                                             ))}
                                         </tbody>
