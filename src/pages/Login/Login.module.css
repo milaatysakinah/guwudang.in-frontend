@@ -33,3 +33,7 @@
 .textBox{
     border-radius: 0.5rem;
 }
+
+.font {
+    font-weight: bold;
+}

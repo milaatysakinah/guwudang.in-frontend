@@ -1,7 +1,7 @@
 import React from "react";
-import { Col, Container, Nav, Row, Image, Card, Button } from "react-bootstrap";
+import { Col, Container, Row, Image, Card, Button } from "react-bootstrap";
 import classes from "./AccountPage.module.css";
-import { Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { logout } from "utils/auth";
 import axios from "axios";
 import { GET_FILMS } from "constants/urls";
@@ -32,16 +32,25 @@ const AccountPage = () => {
     history.replace("/login");
   };
 
+  const fakeData = [
+    {
+      username: "Kucing1",
+      companyName: "PT. Converse Indonesia",
+      email: "alfianhaidar@gmail.com",
+      phoneNumber: "081234567",
+    },
+  ];
+
   return (
-    <div style={{ backgroundColor: "#dde5f1" }}>
+    <div>
       <Container fluid>
-        <Row style={{ backgroundColor: "#dde5f1" }}>
-          <Col md={10}>
+        <Row>
+          <Col style={{ height: "60vh" }}>
             <Container fluid>
-              <Row>
-                <Container style={{ height: "100vh" }}>
+              <Row style={{ marginTop: "40px" }}>
+                <Container>
                   <Row>
-                    <Col style={{ justifySelf: "center" }, {}}>
+                    <Col>
                       <Image
                         className={classes.profilePicture}
                         src="https://media.sproutsocial.com/uploads/2017/02/10x-featured-social-media-image-size.png"
@@ -52,47 +61,65 @@ const AccountPage = () => {
                   <Row>
                     <Col>
                       <Row>
-                        <p>Username</p>
+                        <p className={classes.cardTitle}>Username</p>
                       </Row>
                       <Row>
-                        <Card className={classes.card}>
+                        <Card className={classes.cardBody}>
                           <Card.Body>
-                            Mirose
+                            {fakeData.map((data) => (
+                              <p>{data.username}</p>
+                            ))}
                           </Card.Body>
                         </Card>
                       </Row>
                     </Col>
 
                     <Col>
-                      <Card border="dark" className={classes.card}>
-                        <Card.Header>Company Name</Card.Header>
-                        <Card.Body>
-                          <Card.Title>PT.Converse Indonesia</Card.Title>
-                        </Card.Body>
-                      </Card>
+                      <Row>
+                        <p className={classes.cardTitle}>Company Name</p>
+                      </Row>
+                      <Row>
+                        <Card className={classes.cardBody}>
+                          <Card.Body>
+                            {fakeData.map((data) => (
+                              <p>{data.companyName}</p>
+                            ))}
+                          </Card.Body>
+                        </Card>
+                      </Row>
                     </Col>
                   </Row>
                   <Row>
                     <Col>
-                      <Card border="dark" className={classes.card}>
-                        <Card.Header>Email</Card.Header>
-                        <Card.Body>
-                          <Card.Title>Mirose@gmail.com</Card.Title>
-                        </Card.Body>
-                      </Card>
+                      <Row>
+                        <p className={classes.cardTitle}>Email</p>
+                      </Row>
+                      <Row>
+                        <Card className={classes.cardBody}>
+                          <Card.Body>
+                            {fakeData.map((data) => (
+                              <p>{data.email}</p>
+                            ))}
+                          </Card.Body>
+                        </Card>
+                      </Row>
                     </Col>
-
                     <Col>
-                      <Card border="dark" className={classes.card}>
-                        <Card.Header>Password</Card.Header>
-                        <Card.Body>
-                          <Card.Title>PT.Converse Indonesia</Card.Title>
-                        </Card.Body>
-                      </Card>
+                      <Col>
+                        <Row>
+                          <p className={classes.cardTitle}>Phone Number</p>
+                        </Row>
+                        <Row>
+                          <Card className={classes.cardBody}>
+                            <Card.Body>
+                              {fakeData.map((data) => (
+                                <p>{data.phoneNumber}</p>
+                              ))}
+                            </Card.Body>
+                          </Card>
+                        </Row>
+                      </Col>
                     </Col>
-                    <Button variant="primary" onClick={_onLogout}>
-                Logout
-              </Button>
                   </Row>
                 </Container>
               </Row>
