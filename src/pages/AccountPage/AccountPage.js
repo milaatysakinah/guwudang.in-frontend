@@ -34,20 +34,20 @@ const AccountPage = () => {
 
   const fakeData = [
     {
-      username : "Kucing1",
-      companyName : "PT. Converse Indonesia",
-      email : "alfianhaidar@gmail.com",
-      password : "kucing1ganti"
+      username: "Kucing1",
+      companyName: "PT. Converse Indonesia",
+      email: "alfianhaidar@gmail.com",
+      phoneNumber: "081234567",
     },
-  ]
+  ];
 
   return (
     <div>
       <Container fluid>
         <Row>
-          <Col style={{height: "60vh"}}>
+          <Col style={{ height: "60vh" }}>
             <Container fluid>
-              <Row style={{marginTop: "40px"}}>
+              <Row style={{ marginTop: "40px" }}>
                 <Container>
                   <Row>
                     <Col>
@@ -60,7 +60,7 @@ const AccountPage = () => {
                   </Row>
                   <Row>
                     <Col>
-                      <Row >
+                      <Row>
                         <p className={classes.cardTitle}>Username</p>
                       </Row>
                       <Row>
@@ -75,13 +75,13 @@ const AccountPage = () => {
                     </Col>
 
                     <Col>
-                      <Row >
+                      <Row>
                         <p className={classes.cardTitle}>Company Name</p>
                       </Row>
                       <Row>
                         <Card className={classes.cardBody}>
                           <Card.Body>
-                          {fakeData.map((data) => (
+                            {fakeData.map((data) => (
                               <p>{data.companyName}</p>
                             ))}
                           </Card.Body>
@@ -91,40 +91,35 @@ const AccountPage = () => {
                   </Row>
                   <Row>
                     <Col>
-                        <Row >
-                          <p className={classes.cardTitle}>Email</p>
-                        </Row>
-                        <Row>
-                          <Card className={classes.cardBody}>
-                            <Card.Body>
+                      <Row>
+                        <p className={classes.cardTitle}>Email</p>
+                      </Row>
+                      <Row>
+                        <Card className={classes.cardBody}>
+                          <Card.Body>
                             {fakeData.map((data) => (
                               <p>{data.email}</p>
                             ))}
-                            </Card.Body>
-                          </Card>
-                        </Row>
-                      </Col>
+                          </Card.Body>
+                        </Card>
+                      </Row>
+                    </Col>
                     <Col>
-                    <Col>
-                        <Row >
-                          <p className={classes.cardTitle}>Password</p>
+                      <Col>
+                        <Row>
+                          <p className={classes.cardTitle}>Phone Number</p>
                         </Row>
                         <Row>
                           <Card className={classes.cardBody}>
                             <Card.Body>
-                            {fakeData.map((data) => (
-                              <p>{data.password}</p>
-                            ))}
+                              {fakeData.map((data) => (
+                                <p>{data.phoneNumber}</p>
+                              ))}
                             </Card.Body>
                           </Card>
                         </Row>
                       </Col>
                     </Col>
-                  </Row>
-                  <Row>
-                  <Button className={classes.logoutBtn} variant="primary" onClick={_onLogout}>
-                      Logout
-                    </Button>
                   </Row>
                 </Container>
               </Row>

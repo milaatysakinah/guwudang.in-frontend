@@ -9,15 +9,15 @@ import { Button, Container, Form, Alert } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 import { login } from "utils/auth";
 import LoginBox from "./Login.module.css";
-import { FaUser, FaRegListAlt } from "react-icons/fa";
 import axios from "axios";
 import { LOGIN } from "constants/urls";
+import classes from "./Login.module.css";
 
 const Home = () => {
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
   const [error, setError] = React.useState(false);
-  const history = useHistory()
+  const history = useHistory();
 
   React.useEffect(() => {
     if (email || password) {
@@ -27,40 +27,46 @@ const Home = () => {
   }, [email, password]);
 
   const _onSubmit = () => {
-    axios.post(LOGIN, {
-        email : email,
-        password : password
-    })
-    .then((res) => {
-      login({
-        email: res.data.email,
-        token : res.data.token,
+    axios
+      .post(LOGIN, {
+        email: email,
+        password: password,
+      })
+      .then((res) => {
+        login({
+          email: res.data.email,
+          token: res.data.token,
+        });
+        history.push("/dashboard");
+      })
+      .catch((err) => {
+        setError(true);
       });
-      history.push("/dashboard");
-    })
-    .catch((err) => {
-      setError(true);
-    })
   };
 
   return (
     <div className={LoginBox.body}>
-      <h1 style={{paddingTop : "70px"}} className={LoginBox.outboxTitle}><b>Welcome <br/>to Guwudang.in</b></h1>
+      <h1 style={{ paddingTop: "70px" }} className={LoginBox.outboxTitle}>
+        <b>
+          Welcome <br />
+          to Guwudang.in
+        </b>
+      </h1>
       <Container className="mt-2">
         <Form className={LoginBox.authInner}>
           <h3 className={LoginBox.inboxTitle}>Sign In with email</h3>
           <Alert variant="primary">
-            <span style={{ fontWeight: "bold" }}>Email: </span>
-            angga.ganteng@email.com,
-            <span style={{ fontWeight: "bold" }}> Password: </span>
-            123
+            <span className={classes.font}>Email: </span>
+            kucing1@gmail.com,
+            <span className={classes.font}> Password: </span>
+            kucing1
           </Alert>
           {error && <Alert variant="danger">Salah bos</Alert>}
-          <div className = "auth-inner">
+          <div className="auth-inner">
             <Form.Group controlId="formBasicEmail">
               <Form.Control
                 type="email"
-                placeholder=  "&#xF007; Enter email"
+                placeholder="&#xF007; Enter email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
@@ -69,7 +75,7 @@ const Home = () => {
             <Form.Group controlId="formBasicPassword">
               <Form.Control
                 type="password"
-                className="rounded mb-200 "
+                className="rounded mb-200"
                 placeholder="Password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}

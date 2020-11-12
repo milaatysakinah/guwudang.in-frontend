@@ -4,30 +4,14 @@ import {
     Row,
     Col,
   } from "react-bootstrap";
-import Gambar from './../../asset/LogoBiru.png'
+import Gambar from './../../asset/DetailProduct.PNG'
 
 export default function Detail() {
     return (
         <div>
             <Container>
             <Row>
-                <Col>
-                <img src={Gambar}/>
-                </Col>
-                <Col>
-                /* judul barang */
-                    <Row>
-                        
-                    </Row>
-                /* kode barang */
-                    <Row>
-
-                    </Row>
-                /*  */
-                    <Row>
-
-                    </Row>
-                </Col>
+            <img src={Gambar}/>
             </Row>
             </Container>
         </div>
