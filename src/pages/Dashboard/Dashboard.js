@@ -9,7 +9,14 @@
 */
 
 import React from "react";
-import { Container, Jumbotron, Row, Col, Table,Spinner } from "react-bootstrap";
+import {
+  Container,
+  Jumbotron,
+  Row,
+  Col,
+  Table,
+  Spinner,
+} from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 import { logout } from "utils/auth";
 import axios from "axios";
@@ -259,28 +266,29 @@ const Dashboard = () => {
                     </tr>
                   </thead>
                   <tbody>
-                  {loading ? (
-                    <Row>
-                      <Col>
-                        <Spinner
-                          animation="border"
-                          variant="primary"
-                          className="d-flex justify-content-center ml-auto mr-auto"
-                        >
-                          <span className="sr-only">Loading...</span>
-                        </Spinner>
-                      </Col>
-                    </Row>
-                  ) : partner?.map((p) => {
-                    return (
-                            <tr>
-                              <td>{p.name}</td>
-                              <td>{p.email}</td>
-                              <td>{p.phone_number}</td>
-                            </tr>
-                          );
-                        })
-                      }
+                    {loading ? (
+                      <Row>
+                        <Col>
+                          <Spinner
+                            animation="border"
+                            variant="primary"
+                            className="d-flex justify-content-center ml-auto mr-auto"
+                          >
+                            <span className="sr-only">Loading...</span>
+                          </Spinner>
+                        </Col>
+                      </Row>
+                    ) : (
+                      partner?.map((p) => {
+                        return (
+                          <tr>
+                            <td>{p.name}</td>
+                            <td>{p.email}</td>
+                            <td>{p.phone_number}</td>
+                          </tr>
+                        );
+                      })
+                    )}
                   </tbody>
                 </Table>
               </div>
