@@ -5,7 +5,7 @@
 */
 
 export const login = (user) => {
-  localStorage.setItem("USER", user);
+  localStorage.setItem("USER", user.token);
 };
 
 export const logout = () => {

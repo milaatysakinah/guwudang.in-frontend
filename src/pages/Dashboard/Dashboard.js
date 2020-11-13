@@ -9,11 +9,11 @@
 */
 
 import React from "react";
-import { Container, Jumbotron, Row, Col, Table } from "react-bootstrap";
+import { Container, Jumbotron, Row, Col, Table,Spinner } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 import { logout } from "utils/auth";
 import axios from "axios";
-import { GET_FILMS } from "constants/urls";
+import { GET_PARTNER } from "constants/urls";
 import { FaUser } from "react-icons/fa";
 import { RiFileList3Fill } from "react-icons/ri";
 import { MdLocalShipping } from "react-icons/md";
@@ -23,14 +23,14 @@ const Dashboard = () => {
   const history = useHistory();
   const [loading, setLoading] = React.useState(true);
   const [error, setError] = React.useState(false);
-  const [film, setFilm] = React.useState();
+  const [partner, setPartner] = React.useState();
 
   React.useEffect(() => {
     axios
-      .get(GET_FILMS)
+      .get(GET_PARTNER)
       .then((res) => {
         setLoading(false);
-        setFilm(res.data);
+        setPartner(res.data);
       })
       .catch((err) => {
         setLoading(false);
@@ -248,7 +248,7 @@ const Dashboard = () => {
             >
               <div id="anchor">
                 <h3 style={{ paddingBottom: "20px", fontWeight: "bold" }}>
-                  Customer List
+                  Partner List
                 </h3>
                 <Table borderless size="sm" style={{ fontSize: "75%" }}>
                   <thead>
@@ -259,13 +259,28 @@ const Dashboard = () => {
                     </tr>
                   </thead>
                   <tbody>
-                    {fakeData.map((data) => (
-                      <tr>
-                        <td style={{ paddingBottom: "10px" }}>{data.name}</td>
-                        <td>{data.email}</td>
-                        <td>{data.number}</td>
-                      </tr>
-                    ))}
+                  {loading ? (
+                    <Row>
+                      <Col>
+                        <Spinner
+                          animation="border"
+                          variant="primary"
+                          className="d-flex justify-content-center ml-auto mr-auto"
+                        >
+                          <span className="sr-only">Loading...</span>
+                        </Spinner>
+                      </Col>
+                    </Row>
+                  ) : partner?.map((p) => {
+                    return (
+                            <tr>
+                              <td>{p.name}</td>
+                              <td>{p.email}</td>
+                              <td>{p.phone_number}</td>
+                            </tr>
+                          );
+                        })
+                      }
                   </tbody>
                 </Table>
               </div>

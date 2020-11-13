@@ -34,7 +34,6 @@ const Home = () => {
       })
       .then((res) => {
         login({
-          email: res.data.email,
           token: res.data.token,
         });
         history.push("/dashboard");
