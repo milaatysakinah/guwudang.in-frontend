@@ -1,0 +1,29 @@
+@import url('https://www.fontsquirrel.com/fonts/montserrat');
+
+.round {
+    margin-top: 200px;
+    width: 300px;
+    height: 300px;
+    border-radius: 150px;
+}
+
+.Text1 {
+    font-family: 'monsserat', cursive;
+    src: url('https://www.fontsquirrel.com/fonts/montserrat');
+}
+
+.Text2 {
+    height: 80px;
+}
+
+.Text3 {
+    height: 100px;
+}
+
+.Text4 {
+    height: 50px;
+}
+
+.Text5 {
+    height: 100px;
+}
