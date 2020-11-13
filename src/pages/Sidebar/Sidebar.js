@@ -30,7 +30,7 @@ class Sidebar extends Component {
       >
         <div className={classes.sidebarWrapper}>
           <div className={classes.textContent}>
-            <a href="#" className="simple-text logo-mini">
+            <Link to="/dashboard">
               <div className={classes.logoImg}>
                 <img
                   style={({ width: "50px" }, { height: "50px" })}
@@ -39,52 +39,39 @@ class Sidebar extends Component {
                 />
                 <p className={classes.textContent}>Guwudang.in</p>
               </div>
-            </a>
+            </Link>
 
-            <a href="/dashboard" className="simple-text logo-mini">
+            <Link to="/dashboard">
               <div className={classes.titleContent}>
                 <MdDashboard style={{ color: "white", fontSize: "35px" }} />
-                <p className={classes.titleText}>
-                  Dashboard
-                </p>
+                <p className={classes.titleText}>Dashboard</p>
               </div>
-            </a>
+            </Link>
 
-            <p className={classes.contentType}>
-              Product
-            </p>
+            <p className={classes.contentType}>Product</p>
 
-            <a href="/product" className="simple-text logo-mini">
+            <Link to="/product">
               <div className={classes.titleContent}>
-                <BsFillInboxesFill className={classes.logoSet}/>
-                <p className={classes.titleText}>
-                  Inventory
-                </p>
+                <BsFillInboxesFill className={classes.logoSet} />
+                <p className={classes.titleText}>Inventory</p>
               </div>
-            </a>
+            </Link>
 
-            <p className={classes.contentType}>
-              Business
-            </p>
+            <p className={classes.contentType}>Business</p>
 
-            <a href="/partner" className="simple-text logo-mini">
+            <Link to="/partner">
               <div className={classes.titleContent}>
-                <FaUser className={classes.logoSet}/>
-                <p className={classes.titleText}>
-                  Partners
-                </p>
+                <FaUser className={classes.logoSet} />
+                <p className={classes.titleText}>Partners</p>
               </div>
-            </a>
+            </Link>
 
-            <a href="/accountPage" className="simple-text logo-mini">
-            <div className={classes.titleContent}>
-                <FaUser className={classes.logoSet}/>
-                <p className={classes.titleText}>
-                  Account
-                </p>
+            <Link to="/accountPage">
+              <div className={classes.titleContent}>
+                <FaUser className={classes.logoSet} />
+                <p className={classes.titleText}>Account</p>
               </div>
-            </a>
-              
+            </Link>
           </div>
         </div>
       </div>
