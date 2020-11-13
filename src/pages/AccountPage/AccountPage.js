@@ -1,23 +1,29 @@
 import React from "react";
-import { Col, Container, Row, Image, Card, Button } from "react-bootstrap";
+import { Col, Container, Row, Image, Card, Button, Spinner } from "react-bootstrap";
 import classes from "./AccountPage.module.css";
 import { useHistory } from "react-router-dom";
 import { logout } from "utils/auth";
 import axios from "axios";
-import { GET_FILMS } from "constants/urls";
+import { GET_ACCOUNT } from "constants/urls";
 
 const AccountPage = () => {
   const history = useHistory();
   const [loading, setLoading] = React.useState(true);
   const [error, setError] = React.useState(false);
-  const [film, setFilm] = React.useState();
+  const [account, setAccount] = React.useState();
 
   React.useEffect(() => {
+    console.log(localStorage.getItem("USER"));
     axios
-      .get(GET_FILMS)
+      .get(GET_ACCOUNT, {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("USER")}`,
+        },
+      })
       .then((res) => {
+        console.log(res);
+        setAccount(res.data.user);
         setLoading(false);
-        setFilm(res.data);
       })
       .catch((err) => {
         setLoading(false);
@@ -58,69 +64,77 @@ const AccountPage = () => {
                       />
                     </Col>
                   </Row>
-                  <Row>
-                    <Col>
-                      <Row>
-                        <p className={classes.cardTitle}>Username</p>
-                      </Row>
-                      <Row>
-                        <Card className={classes.cardBody}>
-                          <Card.Body>
-                            {fakeData.map((data) => (
-                              <p>{data.username}</p>
-                            ))}
-                          </Card.Body>
-                        </Card>
-                      </Row>
-                    </Col>
-
-                    <Col>
-                      <Row>
-                        <p className={classes.cardTitle}>Company Name</p>
-                      </Row>
-                      <Row>
-                        <Card className={classes.cardBody}>
-                          <Card.Body>
-                            {fakeData.map((data) => (
-                              <p>{data.companyName}</p>
-                            ))}
-                          </Card.Body>
-                        </Card>
-                      </Row>
-                    </Col>
-                  </Row>
-                  <Row>
-                    <Col>
-                      <Row>
-                        <p className={classes.cardTitle}>Email</p>
-                      </Row>
-                      <Row>
-                        <Card className={classes.cardBody}>
-                          <Card.Body>
-                            {fakeData.map((data) => (
-                              <p>{data.email}</p>
-                            ))}
-                          </Card.Body>
-                        </Card>
-                      </Row>
-                    </Col>
-                    <Col>
+                  {loading ? (
+                    <Row>
                       <Col>
-                        <Row>
-                          <p className={classes.cardTitle}>Phone Number</p>
-                        </Row>
-                        <Row>
-                          <Card className={classes.cardBody}>
-                            <Card.Body>
-                              {fakeData.map((data) => (
-                                <p>{data.phoneNumber}</p>
-                              ))}
-                            </Card.Body>
-                          </Card>
-                        </Row>
+                        <Spinner
+                          animation="border"
+                          variant="primary"
+                          className="d-flex justify-content-center ml-auto mr-auto"
+                        >
+                          <span className="sr-only">Loading...</span>
+                        </Spinner>
                       </Col>
-                    </Col>
-                  </Row>
+                    </Row>
+                  ) : (
+                        <>
+                          <Row>
+                            <Col>
+                              <Row>
+                                <p className={classes.cardTitle}>Username</p>
+                              </Row>
+                              <Row>
+                                <Card className={classes.cardBody}>
+                                  <Card.Body>
+                                    {account.username}
+                                  </Card.Body>
+                                </Card>
+                              </Row>
+                            </Col>
+
+                            <Col>
+                              <Row>
+                                <p className={classes.cardTitle}>Company Name</p>
+                              </Row>
+                              <Row>
+                                <Card className={classes.cardBody}>
+                                  <Card.Body>
+                                    {account.username}
+                                  </Card.Body>
+                                </Card>
+                              </Row>
+                            </Col>
+                          </Row>
+                          <Row>
+                            <Col>
+                              <Row>
+                                <p className={classes.cardTitle}>Email</p>
+                              </Row>
+                              <Row>
+                                <Card className={classes.cardBody}>
+                                  <Card.Body>
+                                    {account.email}
+                                  </Card.Body>
+                                </Card>
+                              </Row>
+                            </Col>
+                            <Col>
+                              <Col>
+                                <Row>
+                                  <p className={classes.cardTitle}>Phone Number</p>
+                                </Row>
+                                <Row>
+                                  <Card className={classes.cardBody}>
+                                    <Card.Body>
+                                      {account.username}
+                                    </Card.Body>
+                                  </Card>
+                                </Row>
+                              </Col>
+                            </Col>
+                          </Row>
+                        </>
+                  )}
                 </Container>
               </Row>
             </Container>
