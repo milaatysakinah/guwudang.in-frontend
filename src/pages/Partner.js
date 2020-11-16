@@ -121,8 +121,8 @@ const Partner = () => {
               </thead>
               <tbody>
                 {loading ? (
-                  <Row>
-                    <Col>
+                  <tr>
+                    <td colspan={6}>
                       <Spinner
                         animation="border"
                         variant="primary"
@@ -130,9 +130,9 @@ const Partner = () => {
                       >
                         <span className="sr-only">Loading...</span>
                       </Spinner>
-                    </Col>
-                  </Row>
-                ) : partner ?.map((p) => {
+                    </td>
+                  </tr>
+                ) : partner?.map((p) => {
                   return (
                     <tr>
                       <td>{no++}</td>

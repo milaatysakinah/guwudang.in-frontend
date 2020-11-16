@@ -141,8 +141,8 @@ const Product = () => {
                                     </thead>
                                     <tbody className="text-center">
                                         {loading ? (
-                                            <Row>
-                                                <Col>
+                                            <tr>
+                                                <td colspan={5}>
                                                     <Spinner
                                                         animation="border"
                                                         variant="primary"
@@ -150,8 +150,8 @@ const Product = () => {
                                                     >
                                                         <span className="sr-only">Loading...</span>
                                                     </Spinner>
-                                                </Col>
-                                            </Row>
+                                                </td>
+                                            </tr>
                                         ) : product ?.map((p) => {
                                             return (
                                                 <tr>

@@ -9,6 +9,7 @@ import MyNavbar from "./Navbar.js";
 import MyDasboard from "./Dashboard/Dashboard.js";
 
 const main = (props) => {
+  console.log(props);
   return (
     <Container fluid>
       <Row>

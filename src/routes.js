@@ -27,7 +27,7 @@ export const APP_ROUTE = [
     name: "Main",
     path: "/",
     exact: true,
-    component: Main,
+    component: Dashboard,
     restricted: true,
     private: true,
   },
