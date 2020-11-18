@@ -30,9 +30,10 @@ import {
 import { Link, useHistory } from "react-router-dom";
 // import { logout } from "utils/auth";
 import axios from "axios";
-import { GET_PARTNER, SEARCH_PARTNER } from "constants/urls";
+import { GET_PARTNER, SEARCH_PARTNER, GET_ACCOUNT } from "constants/urls";
 import { FaSearch, FaInfoCircle } from "react-icons/fa";
 import NavbarTest from "./Navbar.js";
+import Cookies from "js-cookie";
 // import { IconName } from "react-icons/bi";
 
 const Partner = () => {
@@ -41,14 +42,18 @@ const Partner = () => {
   const [error, setError] = React.useState(false);
   const [partner, setPartner] = React.useState();
   const [key, setKey] = React.useState("");
+  const [account, setAccount] = React.useState();
+  const [userID, setUserID] = React.useState();
+  let id;
 
   const _onSearch = () => {
-    console.log(key);
+    console.log(userID);
     setLoading(true);
     axios
       .get(SEARCH_PARTNER, {
         params: {
           search: key,
+          id : userID,
         }
       })
       .then((res) => {
@@ -65,16 +70,38 @@ const Partner = () => {
 
   React.useEffect(() => {
     axios
-      .get(GET_PARTNER)
+      .get(GET_ACCOUNT, {
+        headers: {
+          Authorization: `Bearer ${Cookies.get("USER")}`,
+        },
+      })
       .then((res) => {
-        setLoading(false);
-        setPartner(res.data);
+        console.log(res);
+        //setAccount(res.data.user);
+        id = `${res.data.user.id}`;
+        setUserID(id);
+        axios
+          .get(`http://localhost:8000/api/searchPartnerByUserID/`, {
+              params : {
+                id : id,
+              }, 
+          })
+          .then((rus) => {
+            setLoading(false);
+            setPartner(rus.data);
+          })
+          .catch((errr) => {
+            setLoading(false);
+            setError(true);
+            console.warn(errr);
+          });
       })
       .catch((err) => {
         setLoading(false);
         setError(true);
         console.warn(err);
       });
+
     return () => { };;
   }, []);
 

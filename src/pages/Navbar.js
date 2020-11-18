@@ -19,7 +19,7 @@ import {
 import { Link, useHistory } from "react-router-dom";
 import { logout } from "utils/auth";
 import axios from "axios";
-import { GET_FILMS } from "constants/urls";
+//import { GET_FILMS } from "constants/urls";
 import { FiLogOut } from "react-icons/fi";
 
 const NavbarTest = () => {
@@ -28,7 +28,7 @@ const NavbarTest = () => {
   const [error, setError] = React.useState(false);
   const [film, setFilm] = React.useState();
 
-  React.useEffect(() => {
+  /*React.useEffect(() => {
     axios
       .get(GET_FILMS)
       .then((res) => {
@@ -42,7 +42,7 @@ const NavbarTest = () => {
       });
     return () => {};
   }, []);
-
+*/
   const _onLogout = () => {
     logout();
     history.replace("/login");

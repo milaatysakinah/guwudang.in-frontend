@@ -5,6 +5,7 @@ import { useHistory } from "react-router-dom";
 import { logout } from "utils/auth";
 import axios from "axios";
 import { GET_ACCOUNT } from "constants/urls";
+import Cookies from "js-cookie";
 
 const AccountPage = () => {
   const history = useHistory();
@@ -13,11 +14,11 @@ const AccountPage = () => {
   const [account, setAccount] = React.useState();
 
   React.useEffect(() => {
-    console.log(localStorage.getItem("USER"));
+    console.log(Cookies.get("USER"));
     axios
       .get(GET_ACCOUNT, {
         headers: {
-          Authorization: `Bearer ${localStorage.getItem("USER")}`,
+          Authorization: `Bearer ${Cookies.get("USER")}`,
         },
       })
       .then((res) => {
@@ -86,7 +87,7 @@ const AccountPage = () => {
                               <Row>
                                 <Card className={classes.cardBody}>
                                   <Card.Body>
-                                    {account.username}
+                                    {account?.username}
                                   </Card.Body>
                                 </Card>
                               </Row>
@@ -99,7 +100,7 @@ const AccountPage = () => {
                               <Row>
                                 <Card className={classes.cardBody}>
                                   <Card.Body>
-                                    {account.username}
+                                    {account?.company_name}
                                   </Card.Body>
                                 </Card>
                               </Row>
@@ -113,7 +114,7 @@ const AccountPage = () => {
                               <Row>
                                 <Card className={classes.cardBody}>
                                   <Card.Body>
-                                    {account.email}
+                                    {account?.email}
                                   </Card.Body>
                                 </Card>
                               </Row>
@@ -126,7 +127,7 @@ const AccountPage = () => {
                                 <Row>
                                   <Card className={classes.cardBody}>
                                     <Card.Body>
-                                      {account.username}
+                                      {account?.username}
                                     </Card.Body>
                                   </Card>
                                 </Row>

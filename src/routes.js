@@ -22,6 +22,7 @@ export const APP_ROUTE = [
     exact: true,
     component: Login,
     restricted: false,
+    private: false,
   },
   {
     name: "Main",
@@ -74,7 +75,7 @@ export const APP_ROUTE = [
   }, 
   {
     name: "DetailProduct",
-    path: "/detailProduct",
+    path: "/detailProduct/:id",
     exact: true,
     component: DetailProduct,
     restricted: true,

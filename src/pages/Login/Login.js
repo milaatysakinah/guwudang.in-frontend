@@ -54,18 +54,18 @@ const Home = () => {
       <Container className="mt-2">
         <Form className={LoginBox.authInner}>
           <h3 className={LoginBox.inboxTitle}>Sign In with email</h3>
-          <Alert variant="primary">
+          {/* <Alert variant="primary"> 
             <span className={classes.font}>Email: </span>
             kucing1@gmail.com,
             <span className={classes.font}> Password: </span>
             kucing1
-          </Alert>
+          </Alert>*/}
           {error && <Alert variant="danger">Salah bos</Alert>}
           <div className="auth-inner">
             <Form.Group controlId="formBasicEmail">
               <Form.Control
                 type="email"
-                placeholder="&#xF007; Enter email"
+                placeholder="Enter email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
