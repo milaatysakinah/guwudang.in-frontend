@@ -331,10 +331,7 @@ const Dashboard = () => {
                         </td>
                         {[0, 1, 2, 3, 4, 5, 6].map((p) => {
                           return (
-                            // <td>
-                            //   {orderReportIN ? orderReportIN[p].total : "0"}
-                            // </td>
-                            <td>{orderReportIN[p]?.total || "0"} </td>
+                            <td>{orderReportIN[p][0]?.total} </td>
                           );
                         })}
                       </tr>
@@ -357,10 +354,7 @@ const Dashboard = () => {
                         </td>
                         {[0, 1, 2, 3, 4, 5, 6].map((p) => {
                           return (
-                            // <td>
-                            //   {orderReportOUT ? orderReportOUT[p].total : "0"}
-                            // </td>
-                            <td>{orderReportOUT[p]?.total || `0`} </td>
+                            <td>{orderReportOUT[p][0]?.total} </td>
                           );
                         })}
                       </tr>
