@@ -11,6 +11,11 @@
   background-color: #1f6cb0;
 }
 
+.flexContainer {
+  display: flex;
+  flex-direction: column;
+}
+
 .sidebarWrapper {
   min-height: 100vh !important;
   width: 17vw;
@@ -46,31 +51,40 @@
 }
 
 .logoImg {
-    padding-bottom: 20px;
-    display: flex;
-    flex-direction: row;
+  padding-bottom: 20px;
+  display: flex;
+  flex-direction: row;
 }
 
 .titleContent {
-    padding-top: 30px;
-    display: flex;
-    flex-direction: row;
+  padding-top: 30px;
+  display: flex;
+  flex-direction: row;
 }
 
 .titleText {
-    -webkit-text-fill-color: white;
-    padding-left: 20px;
-    font-size: 20px;
+  -webkit-text-fill-color: white;
+  padding-left: 20px;
+  font-size: 20px;
 }
 
 .logoSet {
-    color: white;
-    font-size: 35px;
+  color: white;
+  font-size: 35px;
 }
 
 .contentType {
-    padding-top: 40px;
-    color: lightgray;
-    opacity: 65%;
-    font-size: 20px;
+  padding-top: 40px;
+  color: lightgray;
+  opacity: 65%;
+  font-size: 20px;
+}
+
+.App {
+  display: flex;
+  flex-direction: row;
+}
+
+.SidebarContent {
+  width: calc(100vw - 200px);
 }

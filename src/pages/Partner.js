@@ -53,8 +53,8 @@ const Partner = () => {
       .get(SEARCH_PARTNER, {
         params: {
           search: key,
-          id : userID,
-        }
+          id: userID,
+        },
       })
       .then((res) => {
         console.log(res.data);
@@ -82,9 +82,9 @@ const Partner = () => {
         setUserID(id);
         axios
           .get(`http://localhost:8000/api/searchPartnerByUserID/`, {
-              params : {
-                id : id,
-              }, 
+            params: {
+              id: id,
+            },
           })
           .then((rus) => {
             setLoading(false);
@@ -102,7 +102,7 @@ const Partner = () => {
         console.warn(err);
       });
 
-    return () => { };;
+    return () => {};
   }, []);
 
   var no = 1;
@@ -116,7 +116,9 @@ const Partner = () => {
     <div>
       <Container>
         <Row>
-          <Col sm={8}><h3>List Partner</h3></Col>
+          <Col sm={8}>
+            <h3>List Partner</h3>
+          </Col>
           <Col sm={4}>
             <InputGroup className="mb-3">
               <FormControl
@@ -129,11 +131,15 @@ const Partner = () => {
                 onChange={(e) => setKey(e.target.value)}
               />
               <InputGroup.Append>
-                <Button variant="outline-secondary" onClick={_onSearch}><FaSearch /></Button>
+                <Button variant="outline-secondary" onClick={_onSearch}>
+                  <FaSearch />
+                </Button>
               </InputGroup.Append>
             </InputGroup>
           </Col>
-          <Col sm={12}><hr /></Col>
+          <Col sm={12}>
+            <hr />
+          </Col>
           <Col sm={12}>
             <Table responsive="xl" className="table table-borderless">
               <thead>
@@ -159,25 +165,29 @@ const Partner = () => {
                       </Spinner>
                     </td>
                   </tr>
-                ) : partner?.map((p) => {
-                  return (
-                    <tr>
-                      <td>{no++}</td>
-                      <td>{p.name}</td>
-                      <td>{p.phone_number}</td>
-                      <td>{p.address}</td>
-                      <td>{p.email}</td>
-                      <td></td>
-                    </tr>
-                  );
-                })
-                }
+                ) : (
+                  partner?.map((p) => {
+                    return (
+                      <tr>
+                        <td>{no++}</td>
+                        <td>{p.name}</td>
+                        <td>{p.phone_number}</td>
+                        <td>{p.address}</td>
+                        <td>{p.email}</td>
+                        <td></td>
+                      </tr>
+                    );
+                  })
+                )}
               </tbody>
             </Table>
           </Col>
         </Row>
-        <Row><Col><hr /></Col></Row>
-
+        <Row>
+          <Col>
+            <hr />
+          </Col>
+        </Row>
       </Container>
     </div>
   );

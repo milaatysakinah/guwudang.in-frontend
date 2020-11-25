@@ -122,40 +122,40 @@ const Dashboard = () => {
           .then((res) => {
             setOrderReportOUT(res.data);
             console.log(res.data.length);
-          })
-          .catch((err) => {
-            setError(true);
-            console.warn(err);
-          });
 
-        axios
-          .get(`http://localhost:8000/api/weeklyOrderItem`, {
-            params: {
-              id: id,
-              type: 1,
-            },
-          })
-          .then((res) => {
-            setOrderReportIN(res.data);
-            console.log(res.data.length);
-          })
-          .catch((err) => {
-            setError(true);
-            console.warn(err);
-          });
+            axios
+              .get(`http://localhost:8000/api/weeklyOrderItem`, {
+                params: {
+                  id: id,
+                  type: 1,
+                },
+              })
+              .then((res) => {
+                setOrderReportIN(res.data);
+                console.log(res.data);
+              })
+              .catch((err) => {
+                setError(true);
+                console.warn(err);
+              });
 
-        axios
-          .get(`http://localhost:8000/api/searchPartnerByUserID/`, {
-            params: {
-              id: id,
-            },
-          })
-          .then((res) => {
-            setLoading(false);
-            setPartner(res.data);
+            axios
+              .get(`http://localhost:8000/api/searchPartnerByUserID/`, {
+                params: {
+                  id: id,
+                },
+              })
+              .then((res) => {
+                setLoading(false);
+                setPartner(res.data);
+              })
+              .catch((err) => {
+                setLoading(false);
+                setError(true);
+                console.warn(err);
+              });
           })
           .catch((err) => {
-            setLoading(false);
             setError(true);
             console.warn(err);
           });
@@ -164,6 +164,7 @@ const Dashboard = () => {
         setLoading(false);
         setError(true);
         console.warn(err);
+        _onLogout();
       });
 
     return () => {};
@@ -329,11 +330,11 @@ const Dashboard = () => {
                             IN
                           </Jumbotron>
                         </td>
-                        {[0, 1, 2, 3, 4, 5, 6].map((p) => {
-                          return (
-                            <td>{orderReportIN[p][0]?.total} </td>
-                          );
-                        })}
+                        {orderReportIN &&
+                          orderReportIN.length > 0 &&
+                          orderReportIN.map((p) => {
+                            return <td>{p[0]?.total} </td>;
+                          })}
                       </tr>
                       <tr>
                         <td>
@@ -352,11 +353,11 @@ const Dashboard = () => {
                             OUT
                           </Jumbotron>
                         </td>
-                        {[0, 1, 2, 3, 4, 5, 6].map((p) => {
-                          return (
-                            <td>{orderReportOUT[p][0]?.total} </td>
-                          );
-                        })}
+                        {orderReportOUT &&
+                          orderReportOUT.length > 0 &&
+                          orderReportOUT.map((p) => {
+                            return <td>{p[0]?.total} </td>;
+                          })}
                       </tr>
                     </tbody>
                   </Table>
@@ -404,7 +405,6 @@ const Dashboard = () => {
           </Container>
         </>
       )}
-      ;
     </div>
   );
 };

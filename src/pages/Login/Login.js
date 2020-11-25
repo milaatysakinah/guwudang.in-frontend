@@ -8,7 +8,6 @@ import React from "react";
 import { Button, Container, Form, Alert } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 import { login } from "utils/auth";
-import LoginBox from "./Login.module.css";
 import axios from "axios";
 import { LOGIN } from "constants/urls";
 import classes from "./Login.module.css";
@@ -44,16 +43,16 @@ const Home = () => {
   };
 
   return (
-    <div className={LoginBox.body}>
-      <h1 style={{ paddingTop: "70px" }} className={LoginBox.outboxTitle}>
+    <div className={classes.body}>
+      <h1 style={{ paddingTop: "70px" }} className={classes.outboxTitle}>
         <b>
           Welcome <br />
           to Guwudang.in
         </b>
       </h1>
       <Container className="mt-2">
-        <Form className={LoginBox.authInner}>
-          <h3 className={LoginBox.inboxTitle}>Sign In with email</h3>
+        <Form className={classes.authInner}>
+          <h3 className={classes.inboxTitle}>Sign In with email</h3>
           {/* <Alert variant="primary"> 
             <span className={classes.font}>Email: </span>
             kucing1@gmail.com,
@@ -61,9 +60,10 @@ const Home = () => {
             kucing1
           </Alert>*/}
           {error && <Alert variant="danger">Salah bos</Alert>}
-          <div className="auth-inner">
+          <div>
             <Form.Group controlId="formBasicEmail">
               <Form.Control
+                style={{ borderRadius: "20px" }}
                 type="email"
                 placeholder="Enter email"
                 value={email}
@@ -73,15 +73,24 @@ const Home = () => {
 
             <Form.Group controlId="formBasicPassword">
               <Form.Control
+                style={{ borderRadius: "20px" }}
                 type="password"
-                className="rounded mb-200"
                 placeholder="Password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
             </Form.Group>
-            <Button variant="primary" onClick={_onSubmit}>
-              Submit
+            <Button
+              className={classes.button}
+              style={{
+                borderRadius: "20px",
+                backgroundColor: "#1F6CB0",
+                marginBottom: "100px",
+              }}
+              variant="primary"
+              onClick={_onSubmit}
+            >
+              LOGIN
             </Button>
           </div>
         </Form>

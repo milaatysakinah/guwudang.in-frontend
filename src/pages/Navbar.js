@@ -47,14 +47,34 @@ const NavbarTest = () => {
         setError(true);
         console.warn(err);
       });
-    return () => { };
+    return () => {};
   }, []);
 
-  var days = ["Minggu","Senin","Selasa","Rabu","Kamis","Jum'at","Sabtu"];
-  var months = ["Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","November","Desember"];
+  var days = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jum'at", "Sabtu"];
+  var months = [
+    "Januari",
+    "Februari",
+    "Maret",
+    "April",
+    "Mei",
+    "Juni",
+    "Juli",
+    "Agustus",
+    "September",
+    "Oktober",
+    "November",
+    "Desember",
+  ];
 
   var today = new Date();
-  var date = days[today.getDay()] + ", " +today.getDate() + ' ' + months[(today.getMonth())] + ' ' + today.getFullYear();
+  var date =
+    days[today.getDay()] +
+    ", " +
+    today.getDate() +
+    " " +
+    months[today.getMonth()] +
+    " " +
+    today.getFullYear();
 
   /*React.useEffect(() => {
     axios
@@ -90,8 +110,9 @@ const NavbarTest = () => {
       <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
         <Navbar.Brand href="#">
           <FiLogOut
+            size="40px"
             onClick={_onLogout}
-            style={{ width: "50px", height: "50px", marginRight: "20px" }}
+            style={{ marginRight: "20px" }}
           ></FiLogOut>
         </Navbar.Brand>
       </Navbar.Collapse>
