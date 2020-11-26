@@ -1,5 +1,13 @@
 import React from "react";
-import { Col, Container, Row, Image, Card, Button, Spinner } from "react-bootstrap";
+import {
+  Col,
+  Container,
+  Row,
+  Image,
+  Card,
+  Button,
+  Spinner,
+} from "react-bootstrap";
 import classes from "./AccountPage.module.css";
 import { useHistory } from "react-router-dom";
 import { logout } from "utils/auth";
@@ -78,63 +86,52 @@ const AccountPage = () => {
                       </Col>
                     </Row>
                   ) : (
-                        <>
+                    <>
+                      <Row>
+                        <Col>
                           <Row>
-                            <Col>
-                              <Row>
-                                <p className={classes.cardTitle}>Username</p>
-                              </Row>
-                              <Row>
-                                <Card className={classes.cardBody}>
-                                  <Card.Body>
-                                    {account?.username}
-                                  </Card.Body>
-                                </Card>
-                              </Row>
-                            </Col>
-
-                            <Col>
-                              <Row>
-                                <p className={classes.cardTitle}>Company Name</p>
-                              </Row>
-                              <Row>
-                                <Card className={classes.cardBody}>
-                                  <Card.Body>
-                                    {account?.company_name}
-                                  </Card.Body>
-                                </Card>
-                              </Row>
-                            </Col>
+                            <p className={classes.cardTitle}>Username</p>
                           </Row>
                           <Row>
-                            <Col>
-                              <Row>
-                                <p className={classes.cardTitle}>Email</p>
-                              </Row>
-                              <Row>
-                                <Card className={classes.cardBody}>
-                                  <Card.Body>
-                                    {account?.email}
-                                  </Card.Body>
-                                </Card>
-                              </Row>
-                            </Col>
-                            <Col>
-                              <Col>
-                                <Row>
-                                  <p className={classes.cardTitle}>Phone Number</p>
-                                </Row>
-                                <Row>
-                                  <Card className={classes.cardBody}>
-                                    <Card.Body>
-                                      {account?.username}
-                                    </Card.Body>
-                                  </Card>
-                                </Row>
-                              </Col>
-                            </Col>
+                            <Card className={classes.cardBody}>
+                              <Card.Body>{account?.username}</Card.Body>
+                            </Card>
                           </Row>
-                        </>
+                        </Col>
+                        <Col>
+                          <Row>
+                            <p className={classes.cardTitle}>Company Name</p>
+                          </Row>
+                          <Row>
+                            <Card className={classes.cardBody}>
+                              <Card.Body>{account?.company_name}</Card.Body>
+                            </Card>
+                          </Row>
+                        </Col>
+                      </Row>
+                      <Row>
+                        <Col>
+                          <Row>
+                            <p className={classes.cardTitle}>Email</p>
+                          </Row>
+                          <Row>
+                            <Card className={classes.cardBody}>
+                              <Card.Body>{account?.email}</Card.Body>
+                            </Card>
+                          </Row>
+                        </Col>
+                        <Col>
+                          <Row>
+                            <p className={classes.cardTitle}>Phone Number</p>
+                          </Row>
+                          <Row>
+                            <Card className={classes.cardBody}>
+                              <Card.Body>{account?.username}</Card.Body>
+                            </Card>
+                          </Row>
+                        </Col>
+                      </Row>
+                    </>
                   )}
                 </Container>
               </Row>
