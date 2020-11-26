@@ -87,7 +87,7 @@ const Product = () => {
               setLoading(false);
 
               axios
-                .get(`http://localhost:8000/api/searchProductByUserID/`, {
+                .get(`http://localhost:8000/api/productStock/`, {
                     params: {
                         id : id,
                     },
@@ -194,7 +194,7 @@ const Product = () => {
                                                             <td>{no++}</td>
                                                             <td>{p.product_name}</td>
                                                             <td>{p.price}</td>
-                                                            <td>{p.units}</td>
+                                                            <td>{p?.total|| "0"}</td>
                                                             <td><Link to={`/detailProduct/${p.id}`}><Button>Detail <FaInfoCircle /></Button></Link></td>
                                                         </tr>
                                                     );
