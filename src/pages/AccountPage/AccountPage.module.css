@@ -1,33 +1,33 @@
 .bodyBackground {
-    background-color: lightgray;
+  background-color: lightgray;
 }
 
 .titleText {
-    font-size: 35px;
-    font-weight: bold;
-    margin-top: 20px;
+  font-size: 35px;
+  font-weight: bold;
+  margin-top: 20px;
 }
 
 .profilePicture {
-    width: 260px;
-    height: 260px;
-    margin-left: 380px;
+  width: 260px;
+  height: 260px;
+  margin-left: 340px;
 }
 
 .cardTitle {
-    margin-left: 30px;
-    margin-top: 60px;
+  margin-left: 30px;
+  margin-top: 60px;
 }
 
 .cardBody {
-    padding-top: 5px;
-    margin-left: 30px;
-    width: 20vw;
-    text-align: center;
+  padding-top: 5px;
+  margin-left: 30px;
+  width: 20vw;
+  text-align: center;
 }
 
 .logoutBtn {
-    margin-top: 120px;
-    width: 10vw;
-    margin-left: 420px;
+  margin-top: 120px;
+  width: 10vw;
+  margin-left: 420px;
 }
