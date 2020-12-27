@@ -25,7 +25,7 @@ const Detail = () => {
   React.useEffect(() => {
     console.log(id);
     axios
-      .get(`http://localhost:8000/api/product/${id}`)
+      .get(`http://api.guwudangin.me/api/product/${id}`)
       .then((res) => {
         console.log(res.data);
         setProduct(res.data);
@@ -34,7 +34,7 @@ const Detail = () => {
         setLoading(false);
 
         axios
-          .get(`http://localhost:8000/api/productType/${type}`)
+          .get(`http://api.guwudangin.me/api/productType/${type}`)
           .then((res) => {
             console.log(res.data);
             setProductType(res.data);

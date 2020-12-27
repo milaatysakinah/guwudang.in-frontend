@@ -81,7 +81,7 @@ const Partner = () => {
         id = `${res.data.user.id}`;
         setUserID(id);
         axios
-          .get(`http://localhost:8000/api/searchPartnerByUserID/`, {
+          .get(`http://api.guwudangin.me/api/searchPartnerByUserID/`, {
             params: {
               id: id,
             },

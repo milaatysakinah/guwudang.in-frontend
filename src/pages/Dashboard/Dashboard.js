@@ -68,7 +68,7 @@ const Dashboard = () => {
         id = res.data.user.id;
 
         axios
-          .get(`http://localhost:8000/api/searchProductByUserID/`, {
+          .get(`http://api.guwudangin.me/api/searchProductByUserID/`, {
             params: {
               id: id,
             },
@@ -83,7 +83,7 @@ const Dashboard = () => {
           });
 
         axios
-          .get(`http://localhost:8000/api/searchInvoiceByUserID/`, {
+          .get(`http://api.guwudangin.me/api/searchInvoiceByUserID/`, {
             params: {
               id: id,
             },
@@ -98,7 +98,7 @@ const Dashboard = () => {
           });
 
         axios
-          .get(`http://localhost:8000/api/searchOrderItemByUserID/`, {
+          .get(`http://api.guwudangin.me/api/searchOrderItemByUserID/`, {
             params: {
               id: id,
             },
@@ -113,7 +113,7 @@ const Dashboard = () => {
           });
 
         axios
-          .get(`http://localhost:8000/api/weeklyOrderItem`, {
+          .get(`http://api.guwudangin.me/api/weeklyOrderItem`, {
             params: {
               id: id,
               type: 2,
@@ -124,7 +124,7 @@ const Dashboard = () => {
             console.log(res.data.length);
 
             axios
-              .get(`http://localhost:8000/api/weeklyOrderItem`, {
+              .get(`http://api.guwudangin.me/api/weeklyOrderItem`, {
                 params: {
                   id: id,
                   type: 1,
@@ -140,7 +140,7 @@ const Dashboard = () => {
               });
 
             axios
-              .get(`http://localhost:8000/api/searchPartnerByUserID/`, {
+              .get(`http://api.guwudangin.me/api/searchPartnerByUserID/`, {
                 params: {
                   id: id,
                 },

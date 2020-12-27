@@ -87,7 +87,7 @@ const Product = () => {
               setLoading(false);
 
               axios
-                .get(`http://localhost:8000/api/productStock/`, {
+                .get(`http://api.guwudangin.me/api/productStock/`, {
                     params: {
                         id : id,
                     },
