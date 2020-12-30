@@ -55,6 +55,9 @@ const Product = () => {
         setLoading(true);
         axios
             .get(SEARCH_PRODUCT, {
+                headers: {
+                    Authorization: `Bearer ${Cookies.get("USER")}`,
+                },
                 params   : {
                     id : userID,
                     search : key,
@@ -87,7 +90,10 @@ const Product = () => {
               setLoading(false);
 
               axios
-                .get(`http://api.guwudangin.me/api/productStock/`, {
+                .get(`http://localhost:8000/api/productStock/`, {
+                    headers: {
+                        Authorization: `Bearer ${Cookies.get("USER")}`,
+                      },
                     params: {
                         id : id,
                     },
