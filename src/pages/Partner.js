@@ -41,6 +41,9 @@ const Partner = () => {
     setLoading(true);
     axios
       .get(SEARCH_PARTNER, {
+        headers: {
+          Authorization: `Bearer ${Cookies.get("USER")}`,
+        },
         params: {
           search: key,
           id: userID,
@@ -68,7 +71,10 @@ const Partner = () => {
         id = `${res.data.user.id}`;
         setUserID(id);
         axios
-          .get(`http://api.guwudangin.me/api/searchPartnerByUserID/`, {
+          .get(`http://localhost:8000/api/searchPartnerByUserID/`, {
+            headers: {
+              Authorization: `Bearer ${Cookies.get("USER")}`,
+            },
             params: {
               id: id,
             },

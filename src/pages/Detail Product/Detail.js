@@ -11,6 +11,7 @@ import classes from "./Detail.module.css";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { PRODUCT_DETAIL, GET_PRODUCT } from "constants/urls";
+import Cookies from "js-cookie";
 
 const Detail = () => {
   const [loading, setLoading] = React.useState(true);
@@ -24,7 +25,11 @@ const Detail = () => {
   React.useEffect(() => {
     console.log(id);
     axios
-      .get(`http://api.guwudangin.me/api/product/${id}`)
+      .get(`http://localhost:8000/api/product/${id}`,{
+        headers: {
+          Authorization: `Bearer ${Cookies.get("USER")}`,
+        },
+      })
       .then((res) => {
         setProduct(res.data);
         type = res.data.product_type_id;
@@ -32,7 +37,11 @@ const Detail = () => {
         setLoading(false);
 
         axios
-          .get(`http://api.guwudangin.me/api/productType/${type}`)
+          .get(`http://localhost:8000/api/productType/${type}`,{
+            headers: {
+              Authorization: `Bearer ${Cookies.get("USER")}`,
+            },
+          })
           .then((res) => {
             setProductType(res.data);
             setLoading(false);
@@ -52,6 +61,9 @@ const Detail = () => {
     console.log(id);
     axios
       .get(PRODUCT_DETAIL, {
+        headers: {
+          Authorization: `Bearer ${Cookies.get("USER")}`,
+        },
         params: {
           search: id,
         },

@@ -57,7 +57,10 @@ const Dashboard = () => {
         id = res.data.user.id;
 
         axios
-          .get(`http://api.guwudangin.me/api/searchProductByUserID/`, {
+          .get(`http://localhost:8000/api/searchProductByUserID/`, {
+            headers: {
+              Authorization: `Bearer ${Cookies.get("USER")}`,
+            },
             params: {
               id: id,
             },
@@ -72,7 +75,10 @@ const Dashboard = () => {
           });
 
         axios
-          .get(`http://api.guwudangin.me/api/searchInvoiceByUserID/`, {
+          .get(`http://localhost:8000/api/searchInvoiceByUserID/`, {
+            headers: {
+              Authorization: `Bearer ${Cookies.get("USER")}`,
+            },
             params: {
               id: id,
             },
@@ -87,7 +93,10 @@ const Dashboard = () => {
           });
 
         axios
-          .get(`http://api.guwudangin.me/api/searchOrderItemByUserID/`, {
+          .get(`http://localhost:8000/api/searchOrderItemByUserID/`, {
+            headers: {
+              Authorization: `Bearer ${Cookies.get("USER")}`,
+            },
             params: {
               id: id,
             },
@@ -101,7 +110,10 @@ const Dashboard = () => {
           });
 
         axios
-          .get(`http://api.guwudangin.me/api/weeklyOrderItem`, {
+          .get(`http://localhost:8000/api/weeklyOrderItem`, {
+            headers: {
+              Authorization: `Bearer ${Cookies.get("USER")}`,
+            },
             params: {
               id: id,
               type: 2,
@@ -111,7 +123,10 @@ const Dashboard = () => {
             setOrderReportOUT(res.data);
 
             axios
-              .get(`http://api.guwudangin.me/api/weeklyOrderItem`, {
+              .get(`http://localhost:8000/api/weeklyOrderItem`, {
+                headers: {
+                  Authorization: `Bearer ${Cookies.get("USER")}`,
+                },
                 params: {
                   id: id,
                   type: 1,
@@ -126,7 +141,10 @@ const Dashboard = () => {
               });
 
             axios
-              .get(`http://api.guwudangin.me/api/searchPartnerByUserID/`, {
+              .get(`http://localhost:8000/api/searchPartnerByUserID/`, {
+                headers: {
+                  Authorization: `Bearer ${Cookies.get("USER")}`,
+                },
                 params: {
                   id: id,
                 },
