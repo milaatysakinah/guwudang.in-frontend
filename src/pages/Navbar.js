@@ -1,21 +1,5 @@
 import React from "react";
-import {
-  Button,
-  Form,
-  FormControl,
-  InputGroup,
-  Image,
-  Container,
-  Nav,
-  Navbar,
-  Col,
-  Row,
-  Table,
-  // Row,
-  // Col,
-  // Spinner,
-  // Alert,
-} from "react-bootstrap";
+import { Navbar } from "react-bootstrap";
 import { Link, useHistory } from "react-router-dom";
 import { logout } from "utils/auth";
 import axios from "axios";
@@ -30,7 +14,6 @@ const NavbarTest = () => {
   const [account, setAccount] = React.useState();
 
   React.useEffect(() => {
-    console.log(Cookies.get("USER"));
     axios
       .get(GET_ACCOUNT, {
         headers: {
@@ -38,7 +21,6 @@ const NavbarTest = () => {
         },
       })
       .then((res) => {
-        console.log(res);
         setAccount(res.data.user);
         setLoading(false);
       })
@@ -76,21 +58,6 @@ const NavbarTest = () => {
     " " +
     today.getFullYear();
 
-  /*React.useEffect(() => {
-    axios
-      .get(GET_FILMS)
-      .then((res) => {
-        setLoading(false);
-        setFilm(res.data);
-      })
-      .catch((err) => {
-        setLoading(false);
-        setError(true);
-        console.warn(err);
-      });
-    return () => {};
-  }, []);
-*/
   const _onLogout = () => {
     logout();
     history.replace("/login");

@@ -1,45 +1,19 @@
-/*
-  Ini halaman dashboard, sebenernya gak sehat cara setstate kayak gini, harusnya pake useReducer
-  karena tiap setState itu komponennya rerender (ngefek ke performa nanti). 
-  Cuman karena biar simpel ya gini dulu aja gpp (useReducer agak mbingungi)
-
-  Disini pas baru render component, fungsi didalam useEffect kepanggil, dia ngefetch API dari API-nya
-  Studio Ghibli (disclaimer: aku bukan wibu). Fetchnya pake axios biar gampang, terus render sesuai
-  kondisi state film / error / loading pake inline conditional.
-*/
-
-
 import React from "react";
 import {
     Button,
-    // Form,
     Form,
     InputGroup,
-    // Image,
     Container,
-    // Nav,
-    // Navbar,
     Col,
     Row,
     Table,
     Spinner,
-    // Jumbotron,
-    // Row,
-    // Col,
-    // Spinner,
-    // Alert,
 } from "react-bootstrap";
 import { Link, useHistory, useParams } from "react-router-dom";
-// import { logout } from "utils/auth";
 import axios from "axios";
 import { GET_ACCOUNT, GET_PRODUCT, SEARCH_PRODUCT } from "constants/urls";
 import { FaSearch, FaInfoCircle } from "react-icons/fa";
 import Cookies from "js-cookie";
-// import NavbarTest from "./Navbar.js";
-// import Sidebar from "./Sidebar/Sidebar";
-// import sidebar from "./Sidebar/Sidebar.module.css";
-// import Home from "./Home.js";
-// import { IconName } from "react-icons/bi";
 
 const Product = () => {
     const [loading, setLoading] = React.useState(true);
@@ -51,7 +25,6 @@ const Product = () => {
     let id;
 
     const _onSearch = () => {
-        console.log(userID);
         setLoading(true);
         axios
             .get(SEARCH_PRODUCT, {
@@ -64,7 +37,6 @@ const Product = () => {
                 }
             })
             .then((res) => {
-                console.log(res.data);
                 setProduct(res.data);
                 setLoading(false);
             })
@@ -85,7 +57,6 @@ const Product = () => {
             .then((res) => {
               id = `${res.data.user.id}`;
               setUserID(id);
-              console.log(id);
               setAccount(res.data.user);
               setLoading(false);
 
@@ -99,7 +70,6 @@ const Product = () => {
                     },
                 })
                 .then((rus) => {
-                    console.log(rus.data);
                     setProduct(rus.data);
                     setLoading(false);
                 })
@@ -119,36 +89,12 @@ const Product = () => {
         return () => { };;
     }, []);
 
-    /*React.useEffect(() => {
-        axios
-            .get(SEARCH_PRODUCT, {
-                params   : {
-                    search : key,
-                }
-            })
-            .then((res) => {
-                setLoading(false);
-                setProduct(res.data);
-            })
-            .catch((err) => {
-                setLoading(false);
-                setError(true);
-                console.warn(err);
-            });
-        return () => { };;
-    }, [key]);
-    */
     var no = 1;
 
     return (
         <div>
             <Container fluid>
                 <Row>
-                    {/* <Col xs={2} className={sidebar.sidebarWrapper}>
-                        <Sidebar />
-                    </Col> */}
-                    {/* <Col xs={10} className={sidebar.pageContentWrapper} style={{ padding: "0" }}> */}
-
                         {/* <NavbarTest /> */}
                         <Container>
                             <br /> <br /> <br />
@@ -218,5 +164,4 @@ const Product = () => {
         </div> 
     );
 };
-
 export default Product;

@@ -1,9 +1,3 @@
-/*
-  Ini halaman login, sebenernya gak sehat cara setstate kayak gini, harusnya pake useReducer
-  karena tiap setState itu komponennya rerender (ngefek ke performa nanti). 
-  Cuman karena biar simpel ya gini dulu aja gpp (useReducer agak mbingungi)
-*/
-
 import React from "react";
 import { Button, Container, Form, Alert } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
@@ -53,13 +47,7 @@ const Home = () => {
       <Container className="mt-2">
         <Form className={classes.authInner}>
           <h3 className={classes.inboxTitle}>Sign In with email</h3>
-          {/* <Alert variant="primary"> 
-            <span className={classes.font}>Email: </span>
-            kucing1@gmail.com,
-            <span className={classes.font}> Password: </span>
-            kucing1
-          </Alert>*/}
-          {error && <Alert variant="danger">Salah bos</Alert>}
+          {error && <Alert variant="danger">Email atau Password <br /> yang anda masukkan salah</Alert>}
           <div>
             <Form.Group controlId="formBasicEmail">
               <Form.Control
@@ -98,5 +86,4 @@ const Home = () => {
     </div>
   );
 };
-
 export default Home;

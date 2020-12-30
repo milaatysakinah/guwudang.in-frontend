@@ -22,7 +22,6 @@ const AccountPage = () => {
   const [account, setAccount] = React.useState();
 
   React.useEffect(() => {
-    console.log(Cookies.get("USER"));
     axios
       .get(GET_ACCOUNT, {
         headers: {
@@ -30,7 +29,6 @@ const AccountPage = () => {
         },
       })
       .then((res) => {
-        console.log(res);
         setAccount(res.data.user);
         setLoading(false);
       })
@@ -46,15 +44,6 @@ const AccountPage = () => {
     logout();
     history.replace("/login");
   };
-
-  const fakeData = [
-    {
-      username: "Kucing1",
-      companyName: "PT. Converse Indonesia",
-      email: "alfianhaidar@gmail.com",
-      phoneNumber: "081234567",
-    },
-  ];
 
   return (
     <div>

@@ -11,28 +11,19 @@
 import React from "react";
 import {
   Button,
-  // Form,
   FormControl,
   InputGroup,
-  Image,
   Container,
-  // Nav,
-  // Navbar,
   Col,
   Row,
   Table,
-  // Jumbotron,
-  // Row,
-  // Col,
   Spinner,
-  // Alert,
 } from "react-bootstrap";
 import { Link, useHistory } from "react-router-dom";
 // import { logout } from "utils/auth";
 import axios from "axios";
 import { GET_PARTNER, SEARCH_PARTNER, GET_ACCOUNT } from "constants/urls";
-import { FaSearch, FaInfoCircle } from "react-icons/fa";
-import NavbarTest from "./Navbar.js";
+import { FaSearch } from "react-icons/fa";
 import Cookies from "js-cookie";
 // import { IconName } from "react-icons/bi";
 
@@ -47,7 +38,6 @@ const Partner = () => {
   let id;
 
   const _onSearch = () => {
-    console.log(userID);
     setLoading(true);
     axios
       .get(SEARCH_PARTNER, {
@@ -60,7 +50,6 @@ const Partner = () => {
         },
       })
       .then((res) => {
-        console.log(res.data);
         setPartner(res.data);
         setLoading(false);
       })
@@ -79,8 +68,6 @@ const Partner = () => {
         },
       })
       .then((res) => {
-        console.log(res);
-        //setAccount(res.data.user);
         id = `${res.data.user.id}`;
         setUserID(id);
         axios
@@ -112,11 +99,6 @@ const Partner = () => {
   }, []);
 
   var no = 1;
-
-  // const _onLogout = () => {
-  //   logout();
-  //   history.replace("/");
-  // };
 
   return (
     <div>

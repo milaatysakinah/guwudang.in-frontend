@@ -5,7 +5,6 @@ import {
   Col,
   Table,
   Spinner,
-  Jumbotron,
 } from "react-bootstrap";
 import Gambar from "./../../asset/Sepatu.png";
 import classes from "./Detail.module.css";
@@ -32,7 +31,6 @@ const Detail = () => {
         },
       })
       .then((res) => {
-        console.log(res.data);
         setProduct(res.data);
         type = res.data.product_type_id;
         console.log(type);
@@ -45,7 +43,6 @@ const Detail = () => {
             },
           })
           .then((res) => {
-            console.log(res.data);
             setProductType(res.data);
             setLoading(false);
           })
@@ -72,7 +69,6 @@ const Detail = () => {
         },
       })
       .then((res) => {
-        console.log(res.data);
         setProductDetail(res.data);
         setLoading(false);
       })
@@ -160,15 +156,6 @@ const Detail = () => {
                         );
                       })}
                     </tbody>
-                    {/* <tbody className="text-center"> 
-                                        <tr>
-                                            <td>17 PCS</td>
-                                            <td></td>
-                                            <td>31/03/2020</td>
-                                            <td></td>
-                                            <td>17/01/2020</td>
-                                        </tr>
-                                    </tbody>*/}
                   </Table>
                 </Row>
               </Col>
@@ -180,5 +167,4 @@ const Detail = () => {
     </div>
   );
 };
-
 export default Detail;
