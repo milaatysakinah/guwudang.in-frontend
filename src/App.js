@@ -1,7 +1,3 @@
-/*
-  Ini entry point reactnya, disini dipake buat define react router
-*/
-
 import React from "react";
 import { BrowserRouter as Router, Switch } from "react-router-dom";
 import { createBrowserHistory } from "history";
@@ -11,7 +7,6 @@ import PublicRoute from "components/PublicRoute";
 import Main from "./pages/main.js";
 
 export const history = createBrowserHistory();
-
 
 const App = () => {
   return (

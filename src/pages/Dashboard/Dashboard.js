@@ -1,13 +1,3 @@
-/*
-  Ini halaman dashboard, sebenernya gak sehat cara setstate kayak gini, harusnya pake useReducer
-  karena tiap setState itu komponennya rerender (ngefek ke performa nanti). 
-  Cuman karena biar simpel ya gini dulu aja gpp (useReducer agak mbingungi)
-
-  Disini pas baru render component, fungsi didalam useEffect kepanggil, dia ngefetch API dari API-nya
-  Studio Ghibli (disclaimer: aku bukan wibu). Fetchnya pake axios biar gampang, terus render sesuai
-  kondisi state film / error / loading pake inline conditional.
-*/
-
 import React from "react";
 import {
   Container,
@@ -64,7 +54,6 @@ const Dashboard = () => {
         },
       })
       .then((res) => {
-        console.log(res);
         id = res.data.user.id;
 
         axios
@@ -105,7 +94,6 @@ const Dashboard = () => {
           })
           .then((res) => {
             setShipping(res.data);
-            console.log(res.data.length);
           })
           .catch((err) => {
             setError(true);
@@ -121,7 +109,6 @@ const Dashboard = () => {
           })
           .then((res) => {
             setOrderReportOUT(res.data);
-            console.log(res.data.length);
 
             axios
               .get(`http://api.guwudangin.me/api/weeklyOrderItem`, {
@@ -132,7 +119,6 @@ const Dashboard = () => {
               })
               .then((res) => {
                 setOrderReportIN(res.data);
-                console.log(res.data);
               })
               .catch((err) => {
                 setError(true);
