@@ -16,6 +16,7 @@ import {
   GET_INVOICE,
   GET_ORDERITEM,
   GET_ACCOUNT,
+  GET_WEEKLY_ORDERITEM,
 } from "constants/urls";
 import { FaUser } from "react-icons/fa";
 import { RiFileList3Fill } from "react-icons/ri";
@@ -57,7 +58,8 @@ const Dashboard = () => {
         id = res.data.user.id;
 
         axios
-          .get(`http://localhost:8000/api/searchProductByUserID/`, {
+          //.get(`http://localhost:8000/api/searchProductByUserID/`, {
+          .get(GET_PRODUCT, {
             headers: {
               Authorization: `Bearer ${Cookies.get("USER")}`,
             },
@@ -75,7 +77,8 @@ const Dashboard = () => {
           });
 
         axios
-          .get(`http://localhost:8000/api/searchInvoiceByUserID/`, {
+          //.get(`http://localhost:8000/api/searchInvoiceByUserID/`, {
+          .get(GET_INVOICE, {
             headers: {
               Authorization: `Bearer ${Cookies.get("USER")}`,
             },
@@ -93,7 +96,8 @@ const Dashboard = () => {
           });
 
         axios
-          .get(`http://localhost:8000/api/searchOrderItemByUserID/`, {
+          //.get(`http://localhost:8000/api/searchOrderItemByUserID/`, {
+          .get(GET_ORDERITEM, {
             headers: {
               Authorization: `Bearer ${Cookies.get("USER")}`,
             },
@@ -110,7 +114,8 @@ const Dashboard = () => {
           });
 
         axios
-          .get(`http://localhost:8000/api/weeklyOrderItem`, {
+          //.get(`http://localhost:8000/api/weeklyOrderItem`, {
+          .get(GET_WEEKLY_ORDERITEM, {
             headers: {
               Authorization: `Bearer ${Cookies.get("USER")}`,
             },
@@ -123,7 +128,8 @@ const Dashboard = () => {
             setOrderReportOUT(res.data);
 
             axios
-              .get(`http://localhost:8000/api/weeklyOrderItem`, {
+              //.get(`http://localhost:8000/api/weeklyOrderItem`, {
+              .get(GET_WEEKLY_ORDERITEM, {
                 headers: {
                   Authorization: `Bearer ${Cookies.get("USER")}`,
                 },
@@ -141,7 +147,8 @@ const Dashboard = () => {
               });
 
             axios
-              .get(`http://localhost:8000/api/searchPartnerByUserID/`, {
+              //.get(`http://localhost:8000/api/searchPartnerByUserID/`, {
+              .get(GET_PARTNER, {
                 headers: {
                   Authorization: `Bearer ${Cookies.get("USER")}`,
                 },

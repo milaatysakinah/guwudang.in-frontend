@@ -11,7 +11,7 @@ import {
 } from "react-bootstrap";
 import { Link, useHistory, useParams } from "react-router-dom";
 import axios from "axios";
-import { GET_ACCOUNT, GET_PRODUCT, SEARCH_PRODUCT } from "constants/urls";
+import { GET_ACCOUNT, GET_PRODUCT_STOCK, SEARCH_PRODUCT } from "constants/urls";
 import { FaSearch, FaInfoCircle } from "react-icons/fa";
 import Cookies from "js-cookie";
 
@@ -61,7 +61,8 @@ const Product = () => {
               setLoading(false);
 
               axios
-                .get(`http://localhost:8000/api/productStock/`, {
+                //.get(`http://localhost:8000/api/productStock/`, {
+                .get(GET_PRODUCT_STOCK, {  
                     headers: {
                         Authorization: `Bearer ${Cookies.get("USER")}`,
                       },

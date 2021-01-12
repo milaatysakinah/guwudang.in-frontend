@@ -71,7 +71,8 @@ const Partner = () => {
         id = `${res.data.user.id}`;
         setUserID(id);
         axios
-          .get(`http://localhost:8000/api/searchPartnerByUserID/`, {
+          //.get(`http://localhost:8000/api/searchPartnerByUserID/`, {
+            .get(GET_PARTNER, {
             headers: {
               Authorization: `Bearer ${Cookies.get("USER")}`,
             },
