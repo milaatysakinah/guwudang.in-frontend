@@ -103,7 +103,7 @@ const Partner = () => {
 
   return (
     <div>
-      <Container>
+      <Container style={{marginTop: "200px"}} >
         <Row>
           <Col sm={8}>
             <h3>List Partner</h3>

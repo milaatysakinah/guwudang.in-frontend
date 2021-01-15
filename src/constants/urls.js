@@ -2,7 +2,7 @@
   Ini constant Url, buat ngedefine Url rest API biasa
 */
 
-const BASE_URL = "http://localhost:8000/api";
+const BASE_URL = "http://api.guwudangin.me/api";
 
 export const GET_ACCOUNT = `${BASE_URL}/authUser`;
 export const GET_PARTNER = `${BASE_URL}/partner`;
@@ -17,4 +17,3 @@ export const GET_WEEKLY_ORDERITEM = `${BASE_URL}/weeklyOrderItem`;
 export const SEARCH_PRODUCT = `${BASE_URL}/searchProduct`;
 export const PRODUCT_DETAIL = `${BASE_URL}/productDetailByProductID`
 export const LOGIN = `${BASE_URL}/login`;
-

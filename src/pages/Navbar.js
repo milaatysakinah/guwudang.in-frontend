@@ -63,7 +63,7 @@ const NavbarTest = () => {
     history.replace("/login");
   };
   return (
-    <Navbar expand="lg">
+    <Navbar expand="lg" style={{marginBottom: "50px"}}>
     <Row md={10}>
       <Col md={2}>
       <Navbar.Brand
