@@ -48,20 +48,12 @@ const AccountPage = () => {
   return (
     <div>
       <Container fluid>
-        <Row>
+        <Row className="justify-content-center">
           <Col style={{ height: "60vh" }}>
             <Container fluid>
               <Row style={{ marginTop: "40px" }}>
                 <Container>
-                  <Row>
-                    <Col>
-                      <Image
-                        className={classes.profilePicture}
-                        src="https://media.sproutsocial.com/uploads/2017/02/10x-featured-social-media-image-size.png"
-                        roundedCircle
-                      />
-                    </Col>
-                  </Row>
+                  
                   {loading ? (
                     <Row>
                       <Col>
@@ -76,6 +68,15 @@ const AccountPage = () => {
                     </Row>
                   ) : (
                     <>
+                    <Row>
+                    <Col>
+                      <Image
+                        className={classes.profilePicture}
+                        src={account?.profile_picture}
+                        roundedCircle
+                      />
+                    </Col>
+                  </Row>
                       <Row>
                         <Col>
                           <Row>

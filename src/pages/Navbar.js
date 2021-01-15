@@ -1,5 +1,5 @@
 import React from "react";
-import { Navbar } from "react-bootstrap";
+import { Navbar, Row, Col } from "react-bootstrap";
 import { Link, useHistory } from "react-router-dom";
 import { logout } from "utils/auth";
 import axios from "axios";
@@ -63,7 +63,9 @@ const NavbarTest = () => {
     history.replace("/login");
   };
   return (
-    <Navbar md={10} expand="lg">
+    <Navbar expand="lg">
+    <Row md={10}>
+      <Col md={2}>
       <Navbar.Brand
         color="white"
         style={({ paddingTop: "20px" }, { paddingLeft: "20px" })}
@@ -73,16 +75,24 @@ const NavbarTest = () => {
         <small style={{fontSize: "18px"}}> {date} </small>
         {/* <small> Wed, 7 Oct 2020 </small> */}
       </Navbar.Brand>
+      </Col>
+      <Col>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
         <Navbar.Brand href="#">
           <FiLogOut
+          
             size="40px"
             onClick={_onLogout}
-            style={{ marginRight: "20px" }}
+            style={{ marginLeft: "1100px", marginTop: "20px" }}
           ></FiLogOut>
         </Navbar.Brand>
       </Navbar.Collapse>
+      </Col>
+    </Row>
+    
+      
+      
     </Navbar>
   );
 };

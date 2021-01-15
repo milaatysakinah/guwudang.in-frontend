@@ -10,7 +10,7 @@ import MyDasboard from "./Dashboard/Dashboard.js";
 
 const main = (props) => {
   return (
-    <Container fluid>
+    <Container fluid style={{backgroundColor: "#dde5f1"}}>
       <Row>
         <Col className={sidebar.slideSidebar} style={{position: "fixed", zIndex: "100"}}>
           <Sidebar />
@@ -18,7 +18,7 @@ const main = (props) => {
         <Col
           
           className={sidebar.pageContentWrapper}
-          style={{ paddingTop: "40px", paddingBottom: "100px", marginLeft: "300px" }}
+          style={{ paddingTop: "2%", height:"100vh", marginLeft: "15%" }}
         >
           <MyNavbar />
           {props.children}
