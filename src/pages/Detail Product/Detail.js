@@ -10,7 +10,7 @@ import Gambar from "./../../asset/Sepatu.png";
 import classes from "./Detail.module.css";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import { PRODUCT_DETAIL, GET_PRODUCT } from "constants/urls";
+import { PRODUCT_DETAIL, GET_PRODUCT, GET_PRODUCT_TYPE } from "constants/urls";
 import Cookies from "js-cookie";
 
 const Detail = () => {
@@ -23,9 +23,10 @@ const Detail = () => {
   var type = 0;
 
   React.useEffect(() => {
-    console.log(id);
+    console.log(GET_PRODUCT + id);
     axios
-      .get(`http://localhost:8000/api/product/${id}`,{
+      //.get(`http://localhost:8000/api/product/${id}`,{
+      .get(GET_PRODUCT + id,{
         headers: {
           Authorization: `Bearer ${Cookies.get("USER")}`,
         },
@@ -37,7 +38,8 @@ const Detail = () => {
         setLoading(false);
 
         axios
-          .get(`http://localhost:8000/api/productType/${type}`,{
+          //.get(`http://localhost:8000/api/productType/${type}`,{
+            .get(GET_PRODUCT_TYPE + type,{
             headers: {
               Authorization: `Bearer ${Cookies.get("USER")}`,
             },
