@@ -63,14 +63,14 @@ const NavbarTest = () => {
     history.replace("/login");
   };
   return (
-    <Navbar expand="lg">
+    <Navbar md={10} expand="lg">
       <Navbar.Brand
         color="white"
         style={({ paddingTop: "20px" }, { paddingLeft: "20px" })}
       >
-        <strong>Welcome, {account?.username} </strong>
+        <strong style={{fontSize: "28px"}} >Welcome, {account?.username} </strong>
         <br />
-        <small> {date} </small>
+        <small style={{fontSize: "18px"}}> {date} </small>
         {/* <small> Wed, 7 Oct 2020 </small> */}
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />

@@ -12,13 +12,13 @@ const main = (props) => {
   return (
     <Container fluid>
       <Row>
-        <Col md={2} className={sidebar.pageContentWrapper}>
+        <Col className={sidebar.slideSidebar} style={{position: "fixed", zIndex: "100"}}>
           <Sidebar />
         </Col>
         <Col
-          md={10}
+          
           className={sidebar.pageContentWrapper}
-          style={{ paddingTop: "40px", paddingBottom: "100px" }}
+          style={{ paddingTop: "40px", paddingBottom: "100px", marginLeft: "300px" }}
         >
           <MyNavbar />
           {props.children}

@@ -14,6 +14,7 @@ import AccountPage from "pages/AccountPage/AccountPage";
 import Product from "pages/Product";
 import Partner from "pages/Partner";
 import DetailProduct from "pages/Detail Product/Detail";
+import AboutUs from "pages/AboutUs/AboutUs";
 
 export const APP_ROUTE = [
   {
@@ -78,6 +79,14 @@ export const APP_ROUTE = [
     path: "/detailProduct/:id",
     exact: true,
     component: DetailProduct,
+    restricted: true,
+    private: true,
+  },
+  {
+    name: "AboutUs",
+    path: "/aboutUs",
+    exact: true,
+    component: AboutUs,
     restricted: true,
     private: true,
   },

@@ -11,19 +11,10 @@ import logoText from "./../../asset/LogoText.png";
 function Sidebar2() {
   const [sidebar, setSidebar] = useState(false);
 
-  const showSidebar = () => setSidebar(!sidebar);
-
   return (
     <>
-      <IconContext.Provider value={{ color: "#1a83ff" }}>
-        <div className="navbar">
-          <Link to="#" className="menu-bars">
-            <FaIcons.FaBars onClick={showSidebar} />
-          </Link>
-        </div>
-      </IconContext.Provider>
-      <nav className={sidebar ? "nav-menu active" : "nav-menu"}>
-        <ul className="nav-menu-items" onClick={showSidebar}>
+      <nav className={"nav-menu active"}>
+        <ul className="nav-menu-items">
           <li className="navbar-toggle">
             <Link to="#" className="menu-bars">
               <FaIcons.FaBars

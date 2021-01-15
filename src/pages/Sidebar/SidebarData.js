@@ -1,8 +1,9 @@
 import React from "react";
 import { FaUser } from "react-icons/fa";
 import { MdDashboard } from "react-icons/md";
-import { BsFillInboxesFill } from "react-icons/bs";
+import { BsFillInboxesFill, BsFillInfoCircleFill } from "react-icons/bs";
 import { RiGroupFill } from "react-icons/ri";
+
 
 export const SidebarData = [
   {
@@ -27,6 +28,12 @@ export const SidebarData = [
     title: "Account",
     path: "/accountPage",
     icon: <FaUser size="35px" />,
+    cName: "nav-text",
+  },
+  {
+    title: "About Us",
+    path: "/aboutUs",
+    icon: <BsFillInfoCircleFill size="35px" />,
     cName: "nav-text",
   },
 ];

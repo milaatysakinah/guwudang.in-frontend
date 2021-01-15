@@ -22,7 +22,7 @@
 
 .authInner {
   width: 400px;
-  height: 400px;
+  height: 450px;
   margin: auto;
   margin-top: 100px;
   background-color: white;
@@ -46,4 +46,9 @@
 
 .font {
   font-weight: bold;
+}
+
+#tst
+{
+background-image:url("https://www.google.com/images/srpr/logo11w.png");
 }
