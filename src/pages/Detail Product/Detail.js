@@ -6,7 +6,6 @@ import {
   Table,
   Spinner,
 } from "react-bootstrap";
-import Gambar from "./../../asset/Sepatu.png";
 import classes from "./Detail.module.css";
 import { useParams } from "react-router-dom";
 import axios from "axios";
@@ -100,7 +99,7 @@ const Detail = () => {
           <Container>
             <Row>
               <Col>
-                <img src={Gambar} className={classes.round} />
+                <img src={product?.product_picture} className={classes.round} />
               </Col>
 
               <Col style={{ marginTop: "100px" }}>
