@@ -20,7 +20,7 @@ import supportAlterra from "./asset/Alterra-Logo---Full-Colour-2000x2000.png";
 const AboutUs = () => {
 
     return(
-        <div style={{marginTop: "40px", backgroundColor: "#dde5f1"}}>
+        <div style={{marginTop: "150px", backgroundColor: "#dde5f1"}}>
             <Row className="justify-content-center">
                 <p style={{fontWeight: "bold", fontSize: "50px", fontFamily: "'Montserrat', sans-serif;", marginBottom: "30px"}}>About Us</p>
                 
@@ -174,6 +174,11 @@ const AboutUs = () => {
                     Achmad Zulkarnain (CEO & Co-Founder TrustMedis) <br />
                     Arie Affianto (Founder Profilku Mobile & Samsung Developer Warrior) <br />
                     Tegar Imansyah ( Software RnD in System Architect Alterra) <br />
+                    {/* - */} <br />
+                    {/* - */} <br />
+                    {/* - */} <br />
+                    {/* - */} <br />
+                    {/* - */} <br />
                     </Row>
                 </Col>
             </Row>

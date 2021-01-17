@@ -81,7 +81,7 @@ const Detail = () => {
   }, []);
 
   return (
-    <div>
+    <div style={{marginTop: "150px"}}>
       {loading ? (
         <Row>
           <Col>

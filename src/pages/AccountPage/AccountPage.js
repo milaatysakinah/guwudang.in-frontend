@@ -47,7 +47,7 @@ const AccountPage = () => {
 
   return (
     <div>
-      <Container fluid>
+      <Container fluid style={{marginTop: "150px"}}>
         <Row className="justify-content-center">
           <Col style={{ height: "60vh" }}>
             <Container fluid>
