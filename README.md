@@ -2,6 +2,20 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Available Scripts
 
+#First up do:
+```bash 
+https://github.com/milaatysakinah/guwudang.in-frontend.git
+```
+
+#change directory to guwudangin-frontend :
+```bash 
+cd guwudang.in-frontend
+```
+#install dependencies package :
+```bash
+npm install
+```
+
 In the project directory, you can run:
 
 ### `yarn start`
